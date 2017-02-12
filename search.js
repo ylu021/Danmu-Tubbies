@@ -1,10 +1,12 @@
 function makeApiCalls() {
   // console.log('Im in api calls')
+
   document.getElementById('search').disabled = false
+
   $('#search').click(function() {
     searchtext = $('#searchtext').val()
     console.log(searchtext)
-    searchListByKeyword(searchtext) 
+    searchListByKeyword(searchtext)
   });
 
 }
@@ -31,7 +33,7 @@ function executeRequest(request) {
           var itemId = ''
           if (item['rating']) {
             itemId = item['id']
-          } 
+          }
           else {
             if (item['id']['videoId']) {
               itemId = item['id']['videoId']
@@ -44,22 +46,22 @@ function executeRequest(request) {
           obj['videoId'] = itemId
           obj['title'] = item['snippet']['title']
           obj['thumbnail'] = item['snippet']['thumbnails']['default']['url']
-          
+
           singleton = document.createElement('li')
           singleton.className = 'list-group-item'
           title = document.createElement('h2')
           title.textContent = obj['title']
           singleton.prepend(title)
-          singleton.appendChild(createLink(obj)) 
+          singleton.appendChild(createLink(obj))
           view.appendChild(singleton)
 
         }
         document.getElementById('searchresult').innerHTML = ''
-        document.getElementById('searchresult').appendChild(view) 
+        document.getElementById('searchresult').appendChild(view)
     }else {
       $('#searchresult').html('<p>No videos founded</p>')
     }
-    
+
   });
 }
 
@@ -70,7 +72,9 @@ function createView() {
 }
 function createLink(obj) {
   var link = document.createElement('a')
-  link.href = './formpost.php?q='+encodeURIComponent(obj['videoId'])+'&'+encodeURIComponent(obj['title'])
+  var email = encodeURIComponent($('#email').text())
+  console.log(email)
+  link.href = './formpost.php?q='+encodeURIComponent(obj['videoId'])+'&title='+encodeURIComponent(obj['title'])+'&email='+email
   link.innerHTML = '<img src="'+obj['thumbnail']+'" width="480" height="360"></img>'
   return link
 }

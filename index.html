@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="1061679501444-mhapvggl4osvb5bm6q3lf2856hi5q6b7.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <title>Danmu - Youtube Project</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   </head>
@@ -11,18 +14,20 @@
 				<div class="col-md-6 col-md-offset-3">
             <p class="pre-auth">
                   Please authorize to continue using
-                  <button id="auth-button" class="form-control">Auth</button>
+                  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
             </p>
 						<!-- <form action="#"> -->
+                <p><input type="hidden" id="email"/></p>
 								<p><input type="text" id="searchtext" placeholder="Type Something..." autocomplete="off" class="form-control"/></p>
 								<p><input type="submit" id="search" value="Search" disabled class="form-control btn btn-primary w100"/></p>
 						<!-- </form> -->
 						<div id="searchresult">
-                  
+
             </div>
 				</div>
 		</div>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="hmac-md5.js"></script>
     <script src="auth.js"></script>
     <script src="search.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
