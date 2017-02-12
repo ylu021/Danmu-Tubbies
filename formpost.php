@@ -25,7 +25,7 @@
 		}
 		$db = null;
 		echo 'here';
-		$newURL = "./database-read.php?q=" . $_GET['q'] . "&email=" . urlencode($_GET['email']);
+		$newURL = "./test.php?q=" . $_GET['q'] . "&email=" . urlencode($_GET['email']);
 		echo $newURL;
 		header('Location: ' . $newURL);
 		exit('<a href="' . $newURL . '">Redirecting you to site </a>');

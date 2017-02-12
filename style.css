@@ -14,6 +14,9 @@
 			height:92%;
 			width:80%;
 		}
+		#container .row {
+			height: inherit;
+		}
 		#btn{
 			height:34px;
 			line-height: 34px;
@@ -36,12 +39,18 @@
 			top:100px;
 			display: inline-block;
 			height: 18px;
+			color: white;
 
 		}
-		.title h3:hover{
-			-moz-animation-play-state:paused;
+		.title:hover{
+			-moz-animation-play-state: paused;
 			-webkit-animation-play-state: paused;
 			animation-play-state: paused;
+		}
+
+		header {
+			/*padding: 1em;*/
+			/*height: 0px;*/
 		}
 		footer{
 			position: fixed;
@@ -59,4 +68,7 @@
 			outline: none;
 			border:1px solid #ddd;
 			padding:0 8px
+		}
+		.post-auth {
+			visibility: hidden;
 		}

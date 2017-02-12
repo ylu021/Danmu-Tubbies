@@ -1,31 +1,51 @@
 <?php
 include 'database-read.php';
+
+try {
+  $dsn = "mysql:host=$dbhost;dbname=$dbname";
+  $opt = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES   => false,
+  ];
+  $db = new PDO($dsn, $dbuser, $dbpass, $opt);
+  // print "No error!";
+  $query = "SELECT * from comment WHERE video_id=? ORDER BY comment_time ASC";
+  $stmt = $db->prepare($query);
+  $stmt->execute(array($_GET['q']));
+
+  include 'head.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-		<head>
-			<meta charset="UTF-8">
-			<title>Danmu Project</title>
-			<link rel="stylesheet" href="style.css">
 
-		</head>
 		<body>
 			<div id="container">
-				<div id="youtube_container">
-				</div>
+        <div class="row">
+          <div id="youtube_container" class="col-md-8">
+  				</div>
+          <header>
+            <div class="row">
+              <div class="col-md-2 text-right">
+                <a href="./" >Log Out</a>
 
+              </div>
+            </div>
+
+          </header>
+        </div>
+
+        <div>
 			</div>
 			<footer>
-				<input type="text" placeholder="输入你想说的东西">
-				<button id="btn" onClick="content()" onmouseover="enter(this)" onmouseleave="leave(this)">准备</button>
+				<input type="text" id="btntext" placeholder="say something">
+				<button id="btn" onClick="content()" onmouseover="enter(this)" onmouseleave="leave(this)">ready</button>
 				<!-- <h4>Get current Time = </h4> -->
 				<p id="demo"></p>
 
 			</footer>
 		</body>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
+    <script src="auth.js"></script>
 		<script>
 		// 2. This code loads the IFrame Player API code asynchronously.
 	      var tag = document.createElement('script');
@@ -81,8 +101,38 @@ include 'database-read.php';
 	        if (event.data == YT.PlayerState.PLAYING) {
 	          // setTimeout(stopVideo, 6000);
 	          //done = true;
+            counter = 0
+            $('#btntext').keypress(function(e){
+              if(e.keyCode==13)
+              $('#btn').click();
+            });
 	          document.getElementsByTagName("demo").innerHTML = player.getCurrentTime();
+            <?php
+                  while($row = $stmt->fetch( PDO::FETCH_ASSOC )){
+            ?>
+
+                     comment = "<?php echo $row['comment_text']; ?>"
+                     time = "<?php echo $row['comment_time']; ?>"
+                     console.log(comment, time)
+                     fire(comment, time, player.getCurrentTime(), counter)
+                     counter+=100
+
+                     if (player.getPlayerState() == 2){
+                       console.log('video is paused')
+                       $('#container').find('#title').each(function(){
+                         console.log($(this))
+                         $(this).stop()
+                       })
+                     }
+
+            <?php }
+                } catch(PDOException $e) {
+                  print "Error!: " . $e->getMessage() . "<br/>";
+                  die();
+                }
+            ?>
 	        }
+
 	      }
 	      function stopVideo() {
 	        player.stopVideo();
@@ -90,12 +140,14 @@ include 'database-read.php';
 		var h = $('html').height();
 		var w = $('html').width() + 200;
 
+
 		function content(){
 			var content = $('input').val();
 			$('input').val('');
 			var $div = $('<div class="title">'+content+'</div>')
 			$('#container').append($div)
-			var rd = Math.random();
+      // var max = document.getElementById('player').offsetHeight;
+			var rd = Math.random()
 				rd = rd * h;
 			$div.css('top',rd).stop().animate({
 				left:'-300px'
@@ -112,7 +164,7 @@ include 'database-read.php';
       var userid= qs['email']
       var videoid = qs['q']
       console.log(userid, videoid)
-      $.post("post-comment.php",{text:content, time:timeobj, user_id: userid, video_id: videoid}, function(data) {
+      $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
         console.log(data)
       });
 
@@ -132,16 +184,35 @@ include 'database-read.php';
       // )
 		}
 
+    function fire(text, time, playerTime, counter) {
+      console.log(text,time, playerTime)
+      playTime = document.getElementsByTagName("demo").innerHTML
+      if (time>=playTime) {
+        console.log(time, playTime)
+
+        var $div = $('<div class="title">'+text+'</div>')
+  			$('#container').append($div)
+  			var rd = Math.random();
+  				rd = rd * h;
+  			$div.css('top',rd).stop().animate({
+  				left: -300+counter+'px'
+  			},10000,'linear',function(){
+  				$(this).remove();
+          counter+=50
+  			})
+      }
+    }
+
 		function meow(){
 			var display = $('input').val();
 				$('input').val('');
 
 		}
 		function enter(x){
-			x.innerHTML = '发射'
+			x.innerHTML = 'Fire'
 		}
 		function leave(x){
-			x.innerHTML = '准备'
+			x.innerHTML = 'Ok'
 		}
 
 		</script>

@@ -14,6 +14,7 @@ function onSignIn(googleUser) {
   console.log("ID Token: " + id_token);
   loadAPIClientInterfaces();
 };
+
 // /**
 //  * This Google APIs JS client automatically invokes this callback function after loading.
 //  */
@@ -73,6 +74,8 @@ function onSignIn(googleUser) {
  * https://developers.google.com/api-client-library/javascript/reference/referencedocs
  */
 function loadAPIClientInterfaces() {
+  $('.pre-auth').hide();
+  $('.post-auth').show();
   var apiKey = "AIzaSyCNiO6-GtSC_fqHvfGc2MA_UMTwXOLAn34"
   gapi.client.setApiKey(apiKey)
   gapi.client.load('youtube', 'v3', function() {
