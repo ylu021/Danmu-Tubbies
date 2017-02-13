@@ -2,12 +2,20 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="1061679501444-mhapvggl4osvb5bm6q3lf2856hi5q6b7.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- <meta name="google-signin-scope" content="profile email"> -->
+    <!-- <meta name="google-signin-client_id" content="1061679501444-mhapvggl4osvb5bm6q3lf2856hi5q6b7.apps.googleusercontent.com"> -->
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
     <title>Danmu - Youtube Project</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    
+    <div class="row">
+				<div class="col-md-6 col-md-offset-3">
+          <form action="#">
+              <div class="col-md-6">
+                <button id="grant-auth"class="btn btn-primary"></button>
+              </div>
+          </form>
+        </div>
+    </div>

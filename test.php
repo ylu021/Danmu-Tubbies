@@ -23,15 +23,6 @@ try {
         <div class="row">
           <div id="youtube_container" class="col-md-8">
   				</div>
-          <header>
-            <div class="row">
-              <div class="col-md-2 text-right">
-                <a href="./" >Log Out</a>
-
-              </div>
-            </div>
-
-          </header>
         </div>
 
         <div>
@@ -43,9 +34,8 @@ try {
 				<p id="demo"></p>
 
 			</footer>
-		</body>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="auth.js"></script>
+      <?php include 'script.php'; ?>
+
 		<script>
 		// 2. This code loads the IFrame Player API code asynchronously.
 	      var tag = document.createElement('script');
@@ -216,4 +206,5 @@ try {
 		}
 
 		</script>
+    </body>
 </html>
