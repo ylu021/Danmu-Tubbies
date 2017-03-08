@@ -1,9 +1,10 @@
 var GoogleAuth //the global var
 var SCOPE = 'https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtubepartner https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtubepartner-channel-audit'
-var KEY = web['api_key']
-var CLIENT = web['client_id']
+var KEY = "AIzaSyCNiO6-GtSC_fqHvfGc2MA_UMTwXOLAn34"
+var CLIENT = "1061679501444-mhapvggl4osvb5bm6q3lf2856hi5q6b7.apps.googleusercontent.com"
 
 function handleClientLoad() {
+  console.log('i still got them ',KEY,CLIENT)
   //this is called directly after page loaded
   //set visibility of button
   // console.log('am i here')
@@ -97,8 +98,8 @@ function onSignIn(googleUser) {
   xhr.open('POST', './signin.php')
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
   xhr.onload = function() {
-    console.log('Signed in as: ' + xhr.responseText); //after the validation call
-    if(xhr.responseText == 'invalid') {
+    console.log('Signed in as: ' + this.responseText); //after the validation call
+    if(this.responseText == 'invalid') {
       console.log('redirect to display page 404')
     }else{
       makeApiCalls()

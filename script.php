@@ -1,5 +1,4 @@
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-<script src="mydata.json"></script>
 <script src="auth2.js"></script>
 <script src="search.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
