@@ -5,18 +5,20 @@
 	try {
 		$db = new PDO($dsn);
 		print "No error!";
-		$query = "SELECT COUNT(*) from user WHERE id=?";
+		$query = "SELECT * from user WHERE id=?";
 		$stmt = $db->prepare($query);
 		$stmt->execute(array($_GET['email']));
-		$rows = $stmt->fetchAll();
-		// echo $rows['id'];
-		echo count($rows);
-		if(count($rows) == 0) {
-			echo "im  hre";
+		$count = $stmt->rowCount();
+		echo "How many $count";
+		if($rows = $stmt->fetch()){
+			echo "";
+		}else{
+			echo "emptyz";
 			$query = "INSERT INTO user(id, video_id) VALUES(?, ?)";
 			$stmt = $db->prepare($query);
-			$stmt->execute(array(urldecode($_GET['email']),$_GET['q']));
+			$stmt->execute(array(urldecode($_GET['email']), $_GET['q']));
 		}
+		
 		$db = null;
 		echo 'here';
 		$newURL = "./test.php?q=" . $_GET['q'] . "&email=" . urlencode($_GET['email']);
