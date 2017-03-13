@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="row navbar">
-        <div class="navbar-toggle">
+    <div class="row header-Navbar">
+        <div class="header-Navbar-toggle">
           <button id="grant-auth" class="btn-custom"></button>
         </div>
-        <div class="navbar-profile">
+        <div class="header-Navbar-profile">
           <span id="email"></span>
         </div>
     </div>
