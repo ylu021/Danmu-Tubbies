@@ -15,15 +15,15 @@
 		$count = $stmt->rowCount();
 		echo "How many $count";
 		if($count==0){
-			echo "emptyz, ";
+			echo "emptyz,";
 			$query = "INSERT INTO Tubbies_User VALUES(:sid, :sname);";
 			$stmt = $db->prepare($query);
-			$err = $stmt->execute($data);
-			if(!$err){
+			$result = $stmt->execute($data);
+			if($result){
 				echo 'successfully inserted';
 				header('Location: ' . '/');
 			}else{
-				echo 'failed';
+				echo '$result';
 			}
 		}else{
 			echo 'already exist';
