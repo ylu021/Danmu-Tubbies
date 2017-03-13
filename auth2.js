@@ -84,6 +84,8 @@ function setSigninStatus(isSignedIn) {
   }else {
       $('#grant-auth').html('Sign in') //change to sign out
       $('#search').css('display', 'none')
+      window.location = "./landing.php"
+      
   }
 }
 
@@ -106,7 +108,7 @@ function onSignIn(googleUser) {
   xhr.onload = function() {
     console.log('Signed in as: ' + this.responseText); //after the validation call
     if(this.responseText == 'invalid') {
-      console.log('redirect to display page 404')
+      window.location = "./404.php"
     }else{
       email = document.getElementById('email')
       email.innerHTML = profile.getEmail()
