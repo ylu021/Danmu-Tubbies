@@ -4,12 +4,7 @@
   $query = 'SELECT * from "Tubbies_Comment" WHERE video_id=? ORDER BY comment_time ASC';
   $stmt = $db->prepare($query);
   $stmt->execute(array($_GET['q']));
-  $email = urldecode(base64_decode($_GET['email']));
-  $video_id = urldecode($_GET['q']);
-  if(empty($_GET)){
-    header('Location: ' . './404.php');
-  }
-  echo 'my info $email, $video_id';
+
   include 'head.php';
 ?>
 
@@ -42,10 +37,25 @@
 
 	      // 3. This function creates an <iframe> (and YouTube player)
 	      //    after the API code downloads.
-	      var player;
-        var userid= <?php echo $email; ?>
-        var videoid = <?php echo $video_id; ?>
-        
+	      var player
+        var qs = (function(a) {
+          var b = {}
+          for (var i = 0; i < a.length; ++i)
+          {
+            var decoded = "" //decoded queries
+            var p=a[i].split('=', 2)
+            if (p.length == 1)
+                  b[p[0]] = ""
+            
+            if(i==1) //email
+              decoded = atob(p[1])
+            else
+              decoded = p[1]
+              
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+          }
+          return b;
+        })(window.location.search.substr(1).split('&'));
 	      function onYouTubeIframeAPIReady() {
           // var videoID =
           // console.log(videoID)
@@ -53,7 +63,7 @@
 	        player = new YT.Player('youtube_container', {
 	          height: '390',
 	          width: '640',
-	          videoId: videoid,
+	          videoId: qs['q'],
 	          events: {
 	            'onReady': onPlayerReady,
 	            'onStateChange': onPlayerStateChange
@@ -133,7 +143,9 @@
       xttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 
       var timeobj= document.getElementsByTagName("demo").innerHTML
-      console.log('myid', userid, videoid)
+      var userid= qs['email']
+      var videoid = qs['q']
+      console.log(userid, videoid)
       $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
         console.log(data)
       });
