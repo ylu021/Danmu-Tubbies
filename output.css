@@ -1,4 +1,46 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  font-size: 16px;
+  box-sizing: border-box; }
+
 body {
-  background: black; }
+  background: white; }
+
+.container-pushin {
+  padding: 1em 1.5em; }
+
+.header-Navbar {
+  max-height: 60px;
+  color: #1abc9c;
+  display: flex;
+  -webkit-display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .header-Navbar-profile {
+    display: inline-block;
+    font-weight: 500; }
+  .header-Navbar-toggle {
+    background: transparent;
+    color: black;
+    border: none;
+    font-size: inherit; }
+  .header-Navbar-logo {
+    background: url(http://lycworks.me/img/front5.png);
+    background-size: contain;
+    background-repeat: no-repeat; }
+    .header-Navbar-logo-link {
+      display: inline-block;
+      color: white;
+      font-size: small; }
+
+.btn-custom {
+  font-weight: 500; }
+
+.search {
+  display: none; }
 
 /*# sourceMappingURL=output.css.map */
