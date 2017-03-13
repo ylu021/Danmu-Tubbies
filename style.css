@@ -64,13 +64,13 @@ body {
 	justify-content: center;
 	align-items: center;
 }*/
-input{
+/*input{
 	height: 30px;
 	border-radius: 6px;
 	outline: none;
 	border:1px solid #ddd;
 	padding:0 8px
-}
+}*/
 .post-auth {
 	visibility: hidden;
 }
