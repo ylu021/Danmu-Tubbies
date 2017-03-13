@@ -48,7 +48,7 @@ function executeRequest(request) {
           obj['thumbnail'] = item['snippet']['thumbnails']['default']['url']
 
           var singleton = document.createElement('li')
-          singleton.className = 'search-result-group-item' 
+          singleton.className = 'search-result-group-item container-pushin' 
           var innerdiv = document.createElement('div')
           innerdiv.className = 'item-content'
           var title = document.createElement('span')

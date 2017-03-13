@@ -81,13 +81,15 @@ body {
 
 .search-result-group {
   width: 85%;
-  padding: 1em;
+  padding: 1em 1.5em;
   margin: 0 auto; }
 
 .search-result-group-item {
   display: flex;
   flex-direction: row-reverse;
-  padding: 1em; }
+  list-style: none;
+  background: white;
+  border: 1px solid #f6f6f6; }
   .search-result-group-item > * {
     width: 50%; }
   .search-result-group-item > img {
