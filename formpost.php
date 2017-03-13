@@ -5,14 +5,14 @@
 	try {
 		$db = new PDO($dsn);
 		print "No error!";
-		$query = 'SELECT * from "Tubbies_User" WHERE id=?';
+		$query = 'SELECT * from Tubbies_User WHERE id=?';
 		$stmt = $db->prepare($query);
 		$stmt->execute(array($_POST['email']));
 		$count = $stmt->rowCount();
 		echo "How many $count";
 		if($count==0){
-			echo "emptyz";
-			$query = 'INSERT INTO "Tubbies_User"(id) VALUES(?)';
+			echo "emptyz, " . urldecode($_POST['email']);
+			$query = 'INSERT INTO Tubbies_User(id) VALUES(?)';
 			$stmt = $db->prepare($query);
 			if($stmt->execute(array(urldecode($_POST['email'])))) {
 				echo 'successfully inserted';
