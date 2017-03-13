@@ -23,8 +23,8 @@
 		echo 'here';
 		$newURL = "./test.php?q=" . $_GET['q'] . "&email=" . urlencode($_GET['email']);
 		echo $newURL;
-		header('Location: ' . $newURL);
-		exit('<a href="' . $newURL . '">Redirecting you to site </a>');
+		//header('Location: ' . $newURL);
+		//exit('<a href="' . $newURL . '">Redirecting you to site </a>');
 	}catch(PDOException $e) {
 		print "Error!: " . $e->getMessage() . "<br/>";
 		die();
