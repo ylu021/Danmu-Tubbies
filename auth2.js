@@ -81,7 +81,7 @@ function setSigninStatus(isSignedIn) {
         makeApiCalls()
       })
       alert(window.location.pathname)
-      if(window.location.pathname!="/index.php"){
+      if(window.location.pathname!="/"){
         window.location = '/'
       }else{
         console.log('finally')
