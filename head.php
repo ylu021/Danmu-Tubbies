@@ -7,12 +7,15 @@
     <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
     <title>Danmu - Youtube Project</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="out.css">
+    <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="row navbar">
         <div class="navbar-toggle">
           <button id="grant-auth" class="btn-custom"></button>
+        </div>
+        <div class="navbar-profile">
+          <span id="email"></span>
         </div>
     </div>
