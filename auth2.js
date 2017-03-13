@@ -84,7 +84,12 @@ function setSigninStatus(isSignedIn) {
   }else {
       $('#grant-auth').html('Sign in') //change to sign out
       $('#search').css('display', 'none')
-      window.location = "./landing.php"
+      alert(window.location.pathname)
+      if(window.location.pathname!="/landing.php"){
+        window.location = './landing.php'
+      }else{
+        console.log('finally')
+      }
       
   }
 }
