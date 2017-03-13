@@ -11,10 +11,12 @@
 		$count = $stmt->rowCount();
 		echo "How many $count";
 		if($count==0){
-			echo "emptyz, " . urldecode($_POST['email']);
-			$query = 'INSERT INTO Tubbies_User(id) VALUES(?)';
+			echo "emptyz, " . 
+			$email = urldecode($_POST['email']);
+			$name = urldecode($_POST['name']);
+			$query = 'INSERT INTO Tubbies_User(id, name) VALUES(?, ?)';
 			$stmt = $db->prepare($query);
-			if($stmt->execute(array(urldecode($_POST['email'])))) {
+			if($stmt->execute(array($email, $name))) {
 				echo 'successfully inserted';
 				$db = null;
 				// echo $newURL;

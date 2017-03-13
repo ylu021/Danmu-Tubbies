@@ -111,7 +111,7 @@ function onSignIn(googleUser) {
         console.log('Confirmed: ' + this.responseText); //after the 
         makeApiCalls()
       }
-      xhr2.send('email='+profile.getEmail())
+      xhr2.send('email='+profile.getEmail()+'&name='+profile.getName())
     }
   };
   xhr.send('client_id='+ CLIENT +'&idtoken='+id_token)
