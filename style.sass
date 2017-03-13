@@ -19,7 +19,7 @@ body
 .header-Navbar
 	max-height: 60px
 	background: white
-	color: $navbar-font
+	color: $signed-font
 	display: flex
 	-webkit-display: flex
 	flex-direction: row
@@ -31,7 +31,7 @@ body
 		font-weight: 500
 	&-toggle
 		background: transparent
-		color: $signed-font
+		color: $navbar-font
 		text-transform: uppercase
 		border: none
 		font-size: inherit
@@ -50,3 +50,27 @@ body
 
 .search
 	display: none
+
+//searchbar
+.search-bar
+	background: white
+	width: 50%
+	display: flex
+	-webkit-display: flex
+	> input
+		margin: 0 0.5em
+		border: none
+	&-field
+		background: #f3f3f3
+		padding: 1em
+		height: 50%
+		&-btn
+			background: $navbar-font
+			color: white
+			font-size: large
+			font-weight: 500
+			width: 30%
+			padding: 1.2em 1em
+			display: inline-block
+			line-height: 0
+

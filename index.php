@@ -1,8 +1,8 @@
 <?php include 'head.php'; ?>
-    <div class="row search">
+    <div class="search container-pushin">
       <div class="search-bar">
-        <input type="text" id="searchtext" placeholder="Type Something..." autocomplete="off" class="form-control"/>
-        <input type="submit" id="search" value="Search" class="form-control btn-search"/>
+        <input type="text" id="searchtext" placeholder="Type Something..." autocomplete="off" class="form-control search-bar-field"/>
+        <input type="submit" id="search" value="Search" class="form-control search-bar-field-btn"/>
       </div>
       <div id="searchresult" class="search-result"></div>
     </div>

@@ -15,7 +15,7 @@ body {
 .header-Navbar {
   max-height: 60px;
   background: white;
-  color: #df4642;
+  color: black;
   display: flex;
   -webkit-display: flex;
   flex-direction: row;
@@ -26,7 +26,7 @@ body {
     font-weight: 500; }
   .header-Navbar-toggle {
     background: transparent;
-    color: black;
+    color: #df4642;
     text-transform: uppercase;
     border: none;
     font-size: inherit; }
@@ -40,5 +40,27 @@ body {
 
 .search {
   display: none; }
+
+.search-bar {
+  background: white;
+  width: 50%;
+  display: flex;
+  -webkit-display: flex; }
+  .search-bar > input {
+    margin: 0 0.5em;
+    border: none; }
+  .search-bar-field {
+    background: #f3f3f3;
+    padding: 1em;
+    height: 50%; }
+    .search-bar-field-btn {
+      background: #df4642;
+      color: white;
+      font-size: large;
+      font-weight: 500;
+      width: 30%;
+      padding: 1.2em 1em;
+      display: inline-block;
+      line-height: 0; }
 
 /*# sourceMappingURL=output.css.map */
