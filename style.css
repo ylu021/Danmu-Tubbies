@@ -1,3 +1,25 @@
+/**{
+	margin:0;
+	padding:0;
+}
+html,
+body {
+	width: 100%;
+	height: auto;
+}
+
+#youtube_container{
+	height:92%;
+	width:80%;
+}
+
+.outer-container{
+	height:100%;
+	width: 100%;
+}
+.container .row {
+	height: inherit;
+}*/
 
 #btn{
 	height:34px;
@@ -15,6 +37,7 @@
 	background-color: red;
 	border:1px solid red;
 }
+
 .title{
 	position:absolute;
 	right:-100px;
@@ -30,11 +53,7 @@
 	animation-play-state: paused;
 }
 
-header {
-	/*padding: 1em;*/
-	/*height: 0px;*/
-}
-footer{
+.inner-footer{
 	position: fixed;
 	bottom:0;
 	width: 100%;

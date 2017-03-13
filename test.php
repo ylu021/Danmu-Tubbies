@@ -18,9 +18,12 @@
 
         <div>
 			</div>
-			<footer>
-				<input type="text" id="btntext" placeholder="say something">
-				<button id="btn" onClick="content()" onmouseover="enter(this)" onmouseleave="leave(this)">ready</button>
+			<footer class="inner-footer">
+        <div class="comment">
+          <input class="comment-field" type="text" id="btntext" placeholder="say something">
+          <button class="comment-btn" id="btn" onClick="content()" onmouseover="enter(this)" onmouseleave="leave(this)">ready</button>
+        </div>
+				
 				<!-- <h4>Get current Time = </h4> -->
 				<p id="demo"></p>
 
