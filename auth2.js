@@ -89,7 +89,6 @@ function setSigninStatus(isSignedIn) {
 
   }else {
       $('#grant-auth').html('Sign in') //change to sign out
-      $('#search').css('display', 'none')
       console.log(window.location.pathname)
       if(window.location.pathname!="/"){
         window.location = '/'
