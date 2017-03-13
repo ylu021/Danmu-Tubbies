@@ -5,7 +5,8 @@
   $stmt = $db->prepare($query);
   $stmt->execute(array($_GET['q']));
   $email = base64_decode($_GET['email']);
-  $video_id = $_GET['q'];
+  $video_id = urldecode($_GET['q']);
+  
   include 'head.php';
 ?>
 
