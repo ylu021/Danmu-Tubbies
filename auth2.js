@@ -78,8 +78,14 @@ function setSigninStatus(isSignedIn) {
         // in the sample code if you select 'Show all snippets' for JavaScript.
         console.log('Youtube API loaded!')
         onSignIn(googleUser)
-        makeApiCalls();
-      });
+        makeApiCalls()
+      })
+      alert(window.location.pathname)
+      if(window.location.pathname!="/index.php"){
+        window.location = '/'
+      }else{
+        console.log('finally')
+      }
 
   }else {
       $('#grant-auth').html('Sign in') //change to sign out
