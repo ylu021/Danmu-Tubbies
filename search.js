@@ -55,8 +55,9 @@ function executeRequest(request) {
           title.textContent = obj['title']
           title.className = 'item-content-name'
           
-          singleton.prepend(title)
-          singleton.appendChild(createLink(obj))
+          innerdiv.prepend(title)
+          innerdiv.appendChild(createLink(obj))
+          singleton.appendChild(innerdiv)
           view.appendChild(singleton)
 
         }
