@@ -1,11 +1,11 @@
 <?php
-// include 'database-read.php';
   require_once 'db-info.php';
 
   $query = 'SELECT * from "Tubbies_Comment" WHERE video_id=? ORDER BY comment_time ASC';
   $stmt = $db->prepare($query);
   $stmt->execute(array($_GET['q']));
-
+  $email = base64_decode($_GET['email'])
+  $video_id = $_GET['q']
   include 'head.php';
 ?>
 
@@ -39,19 +39,7 @@
 	      // 3. This function creates an <iframe> (and YouTube player)
 	      //    after the API code downloads.
 	      var player;
-        var qs = (function(a) {
-          if (a == "") return {};
-          var b = {};
-          for (var i = 0; i < a.length; ++i)
-          {
-              var p=a[i].split('=', 2);
-              if (p.length == 1)
-                  b[p[0]] = "";
-              else
-                  b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
-          }
-          return b;
-        })(window.location.search.substr(1).split('&'));
+        
 	      function onYouTubeIframeAPIReady() {
           // var videoID =
           // console.log(videoID)
@@ -139,9 +127,9 @@
       xttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 
       var timeobj= document.getElementsByTagName("demo").innerHTML
-      var userid= qs['email']
-      var videoid = qs['q']
-      console.log(userid, videoid)
+      var userid= <?php echo $email; ?>
+      var videoid = <?php echo $video_id; ?>
+      console.log('myid', userid, videoid)
       $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
         console.log(data)
       });

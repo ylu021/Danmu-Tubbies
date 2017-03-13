@@ -92,9 +92,18 @@ function createView() {
 function createLink(obj) {
   var link = document.createElement('a')
   link.className = 'item-content-video-link'
-  var email = encodeURIComponent($('#email').text())
+  var email = btoa($('#email').text())
   console.log(email)
   link.href = './test.php?q='+encodeURIComponent(obj['videoId'])+'&title='+encodeURIComponent(obj['title'])+'&email='+email
   link.innerHTML = '<img src="'+obj['thumbnail']+'" width="480" height="360"></img>'
   return link
+}
+
+var jsEncode = {
+  encode: (s,k) => {
+    var enc = ''
+    var str = ''
+    str = s.toString() //only a string can be passed in 
+    for
+  }
 }
