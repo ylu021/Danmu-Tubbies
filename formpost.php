@@ -15,11 +15,10 @@
 			$query = "INSERT INTO user(id, video_id) VALUES(?, ?)";
 			$stmt = $db->prepare($query);
 			if($stmt->execute(array(urldecode($_GET['email']), $_GET['q']))) {
-				echo 'inserting';
-				// $db = null;
-				// $newURL = "./test.php?q=" . $_GET['q'] . "&email=" . urlencode($_GET['email']);
+				$db = null;
+				$newURL = "./test.php?q=" . $_GET['q'] . "&email=" . urlencode($_GET['email']);
 				// echo $newURL;
-				// header('Location: ' . $newURL);
+				header('Location: ' . $newURL);
 		// exit('<a href="' . $newURL . '">This is your first time using our system, we have created an account base on your google profile, now redirecting you to the site </a>');
 			}else {
 				echo 'failed inserting';
