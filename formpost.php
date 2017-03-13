@@ -5,7 +5,7 @@
 	try {
 		$db = new PDO($dsn);
 		print "No error!";
-		$query = "SELECT * from user WHERE id=?";
+		$query = 'SELECT * from "Tubbies_User" WHERE id=?';
 		$stmt = $db->prepare($query);
 		$stmt->execute(array($_POST['email']));
 		$count = $stmt->rowCount();
