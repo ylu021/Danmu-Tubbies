@@ -1,21 +1,21 @@
 /*
 Error: Inconsistent indentation: 4 spaces were used for indentation, but the rest of the document was indented using 1 tab.
-        on line 59 of style.sass
+        on line 61 of style.sass
 
-54: 	font-weight: 500
-55: 
-56: .search
-57: 	display: none
-58: 	margin: 0 auto
-59:     width: 85%
-60: 
-61: //searchbar
-62: .search-bar
-63: 	background: white
-64: 	width: 100%
+56: 	font-weight: 500
+57: 
+58: .search
+59: 	display: none
+60: 	margin: 0 auto
+61:     width: 85%
+62: 
+63: //searchbar
+64: .search-bar
+65: 	background: white
+66: 	width: 100%
 
 Backtrace:
-style.sass:59
+style.sass:61
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:486:in `block in tabulate'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:444:in `each'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:444:in `each_with_index'
@@ -34,4 +34,4 @@ style.sass:59
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Inconsistent indentation: 4 spaces were used for indentation, but the rest of the document was indented using 1 tab.\A         on line 59 of style.sass\A \A 54: 	font-weight: 500\A 55: \A 56: .search\A 57: 	display: none\A 58: 	margin: 0 auto\A 59:     width: 85%\A 60: \A 61: //searchbar\A 62: .search-bar\A 63: 	background: white\A 64: 	width: 100%"; }
+  content: "Error: Inconsistent indentation: 4 spaces were used for indentation, but the rest of the document was indented using 1 tab.\A         on line 61 of style.sass\A \A 56: 	font-weight: 500\A 57: \A 58: .search\A 59: 	display: none\A 60: 	margin: 0 auto\A 61:     width: 85%\A 62: \A 63: //searchbar\A 64: .search-bar\A 65: 	background: white\A 66: 	width: 100%"; }
