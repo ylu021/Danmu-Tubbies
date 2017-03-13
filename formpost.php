@@ -15,22 +15,23 @@
 		$count = $stmt->rowCount();
 		echo "How many $count";
 		if($count==0){
-			echo "emptyz, " . 
+			echo "emptyz, ";
 			$query = "INSERT INTO Tubbies_User VALUES(:sid, :sname);";
 			$stmt = $db->prepare($query);
-			if($stmt->execute($data)) {
+			$err = $stmt->execute($data);
+			if(!$err){
 				echo 'successfully inserted';
-				$db = null;
-				// echo $newURL;
 				header('Location: ' . '/');
-		// exit('<a href="' . $newURL . '">This is your first time using our system, we have created an account base on your google profile, now redirecting you to the site </a>');
-			}else {
-				echo 'failed inserting';
+			}else{
+				echo $err;
 			}
-			
-		}else {
-			
+		}else{
+			echo 'already exist';
+			header('Location: ' . '/');
 		}
+		// exit('<a href="' . $newURL . '">This is your first time using our system, we have created an account base on your google profile, now redirecting you to the site </a>');
+			
+		
 		
 		
 	}catch(PDOException $e) {
