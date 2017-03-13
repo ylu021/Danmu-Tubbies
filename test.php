@@ -28,6 +28,7 @@
 				<p id="demo"></p>
 
 			</comment>
+      <div class="footer">Im a footer</div>
       <?php include 'script.php'; ?>
 
 		<script>

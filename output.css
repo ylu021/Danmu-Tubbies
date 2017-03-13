@@ -139,6 +139,11 @@ body {
 
 .comment-container {
   height: 17%;
-  background: #df4642; }
+  background: white; }
+
+.footer {
+  background: #df4642;
+  height: 60px;
+  position: relative; }
 
 /*# sourceMappingURL=output.css.map */
