@@ -1,22 +1,24 @@
 <?php
   ob_start();
-	include 'db-info.php';
+  require_once 'db-info.php';
 
 	try {
 		$db = new PDO($dsn);
 		print "No error!";
-		$query = 'SELECT * from Tubbies_User WHERE id=?';
+		$data = array(
+				':sid' => urldecode($_POST['email']),
+				':sname' => urldecode($_POST['name'])
+		);
+		$query = "SELECT 1 from Tubbies_User WHERE :sid=id AND :sname=name";
 		$stmt = $db->prepare($query);
-		$stmt->execute(array($_POST['email']));
+		$stmt->execute($data);
 		$count = $stmt->rowCount();
 		echo "How many $count";
 		if($count==0){
 			echo "emptyz, " . 
-			$email = urldecode($_POST['email']);
-			$name = urldecode($_POST['name']);
-			$query = 'INSERT INTO Tubbies_User(id, name) VALUES(?, ?)';
+			$query = "INSERT INTO Tubbies_User VALUES(:sid, :sname);";
 			$stmt = $db->prepare($query);
-			if($stmt->execute(array($email, $name))) {
+			if($stmt->execute($data)) {
 				echo 'successfully inserted';
 				$db = null;
 				// echo $newURL;
