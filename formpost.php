@@ -3,7 +3,7 @@
 	include 'db-info.php';
 
 	try {
-		//$db = new PDO($dsn, $opt);
+		$db = new PDO($dsn, $opt);
 		print "No error!";
 		$query = "SELECT COUNT(*) from user WHERE id=?";
 		$stmt = $db->prepare($query);
