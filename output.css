@@ -123,7 +123,8 @@ body {
   height: inherit;
   display: flex;
   flex-direction: column;
-  position: fixed; }
+  position: fixed;
+  overflow: hidden; }
 
 .inner-container {
   height: 85%;
