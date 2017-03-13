@@ -50,7 +50,7 @@ body {
     margin: 0 0.5em;
     border: none; }
   .search-bar-field {
-    background: #f3f3f3;
+    background: #f6f6f6;
     padding: 1em;
     height: 50%; }
     .search-bar-field-btn {
@@ -64,7 +64,9 @@ body {
       line-height: 0; }
 
 .search-result {
-  padding-top: 2em; }
+  margin-top: 50px;
+  background: #f6f6f6;
+  padding: 1em; }
 
 .search-result-group-item {
   display: flex;
