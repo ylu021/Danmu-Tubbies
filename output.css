@@ -1,83 +1,37 @@
-* {
-  margin: 0;
-  padding: 0; }
+/*
+Error: Inconsistent indentation: 4 spaces were used for indentation, but the rest of the document was indented using 1 tab.
+        on line 59 of style.sass
 
-html, body {
-  font-size: 16px;
-  box-sizing: border-box; }
+54: 	font-weight: 500
+55: 
+56: .search
+57: 	display: none
+58: 	margin: 0 auto
+59:     width: 85%
+60: 
+61: //searchbar
+62: .search-bar
+63: 	background: white
+64: 	width: 100%
 
-body {
-  background: white; }
-
-.container-pushin {
-  padding: 1em 1.5em; }
-
-.header-Navbar {
-  max-height: 60px;
-  background: white;
-  color: black;
-  display: flex;
-  -webkit-display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
-  border-bottom: 1px solid #f3f3f3; }
-  .header-Navbar-profile {
-    display: inline-block;
-    font-weight: 500; }
-  .header-Navbar-toggle {
-    background: transparent;
-    color: #df4642;
-    text-transform: uppercase;
-    border: none;
-    font-size: inherit; }
-  .header-Navbar-logo-link {
-    display: inline-block;
-    color: #df4642;
-    font-size: larger;
-    font-weight: 700; }
-
-.btn-custom {
-  font-weight: 500; }
-
-.search {
-  display: none; }
-
-.search-bar {
-  background: white;
-  width: 50%;
-  display: flex;
-  -webkit-display: flex; }
-  .search-bar > input {
-    margin: 0 0.5em;
-    border: none; }
-  .search-bar-field {
-    background: #f6f6f6;
-    padding: 1em;
-    height: 50%; }
-    .search-bar-field-btn {
-      background: #df4642;
-      color: white;
-      font-size: large;
-      font-weight: 500;
-      width: 30%;
-      padding: 1.2em 1em;
-      display: inline-block;
-      line-height: 0; }
-
-.search-result {
-  margin-top: 50px;
-  background: #f6f6f6;
-  padding: 1em; }
-
-.search-result-group-item {
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 1.5em 0; }
-  .search-result-group-item > * {
-    width: 50%; }
-  .search-result-group-item > img {
-    border: none;
-    border-radius: 3px; }
-
-/*# sourceMappingURL=output.css.map */
+Backtrace:
+style.sass:59
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:486:in `block in tabulate'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:444:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:444:in `each_with_index'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:444:in `tabulate'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:409:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:391:in `run'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:22:in `load'
+/usr/local/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Inconsistent indentation: 4 spaces were used for indentation, but the rest of the document was indented using 1 tab.\A         on line 59 of style.sass\A \A 54: 	font-weight: 500\A 55: \A 56: .search\A 57: 	display: none\A 58: 	margin: 0 auto\A 59:     width: 85%\A 60: \A 61: //searchbar\A 62: .search-bar\A 63: 	background: white\A 64: 	width: 100%"; }

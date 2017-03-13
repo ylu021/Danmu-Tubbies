@@ -38,9 +38,11 @@ body
 		border: none
 		font-size: inherit
 	&-logo
-		//background: url(http://lycworks.me/img/front5.png)
-		//background-size: contain
-		//background-repeat: no-repeat
+		background: url(http://lycworks.me/img/front5.png) no-repeat
+		background-size: contain
+		background-position: 100%
+		width: 15%
+
 		&-link
 			display: inline-block
 			color: $navbar-font
@@ -53,11 +55,13 @@ body
 
 .search
 	display: none
+	margin: 0 auto
+    width: 85%
 
 //searchbar
 .search-bar
 	background: white
-	width: 50%
+	width: 100%
 	display: flex
 	-webkit-display: flex
 	> input
