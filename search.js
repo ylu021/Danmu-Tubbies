@@ -47,10 +47,14 @@ function executeRequest(request) {
           obj['title'] = item['snippet']['title']
           obj['thumbnail'] = item['snippet']['thumbnails']['default']['url']
 
-          singleton = document.createElement('li')
-          singleton.className = 'search-result-group-item' //**change to custom
-          title = document.createElement('span')
+          var singleton = document.createElement('li')
+          singleton.className = 'search-result-group-item' 
+          var innerdiv = document.createElement('div')
+          innerdiv.className = 'item-content'
+          var title = document.createElement('span')
           title.textContent = obj['title']
+          title.className = 'item-content-name'
+          
           singleton.prepend(title)
           singleton.appendChild(createLink(obj))
           view.appendChild(singleton)
@@ -72,6 +76,7 @@ function createView() {
 }
 function createLink(obj) {
   var link = document.createElement('a')
+  link.className = 'item-content-video-link'
   var email = encodeURIComponent($('#email').text())
   console.log(email)
   link.href = './test.php?q='+encodeURIComponent(obj['videoId'])+'&title='+encodeURIComponent(obj['title'])+'&email='+email

@@ -77,7 +77,6 @@ body {
 .search-result {
   margin-top: 15px;
   background: #f6f6f6;
-  padding: 1em;
   width: 100%; }
 
 .search-result-group {
@@ -87,8 +86,8 @@ body {
 
 .search-result-group-item {
   display: flex;
-  flex-direction: column;
-  margin: 1.5em 0; }
+  flex-direction: row-reverse;
+  padding: 1em; }
   .search-result-group-item > * {
     width: 50%; }
   .search-result-group-item > img {
