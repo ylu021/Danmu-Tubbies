@@ -11,8 +11,8 @@
 
 		<body>
 			<div class="outer-container">
-        <div class="row">
-          <div id="youtube_container" class="col-md-8">
+        <div class="inner-container">
+          <div id="youtube_container">
   				</div>
         </div>
 
@@ -55,7 +55,8 @@
             b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
           }
           return b;
-        })(window.location.search.substr(1).split('&'));
+        })(window.location.search.substr(1).split('&'))
+
 	      function onYouTubeIframeAPIReady() {
           // var videoID =
           // console.log(videoID)
