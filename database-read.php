@@ -2,13 +2,13 @@
 	include 'db-info.php';
 
 	try {
-		$dsn = "mysql:host=$dbhost;dbname=$dbname";
+		//$dsn = "mysql:host=$dbhost;dbname=$dbname";
 		$opt = [
 			PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
 			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 			PDO::ATTR_EMULATE_PREPARES   => false,
 		];
-		$db = new PDO($dsn, $dbuser, $dbpass, $opt);
+		$db = new PDO($dsn, $opt);
 		// print "No error!";
 		$query = "SELECT * from user WHERE id=?";
 		// echo $_GET['email'];
