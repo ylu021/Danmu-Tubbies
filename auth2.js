@@ -80,8 +80,8 @@ function setSigninStatus(isSignedIn) {
         onSignIn(googleUser)
         makeApiCalls()
       })
-      alert(window.location.pathname)
-      if(window.location.pathname!="/"){
+      // alert(window.location.pathname)
+      if(window.location.pathname=="/landing.php"){
         window.location = '/'
       }else{
         console.log('finally')
