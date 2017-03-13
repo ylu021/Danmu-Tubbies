@@ -1,13 +1,16 @@
 function makeApiCalls() {
   // console.log('Im in api calls')
 
-  document.getElementById('search').disabled = false
+  if(document.getElementById('search')){
+    $(this).disabled = false
+    $('#search').click(function() {
+      searchtext = $('#searchtext').val()
+      console.log(searchtext)
+      searchListByKeyword(searchtext)
+    })
+  }
 
-  $('#search').click(function() {
-    searchtext = $('#searchtext').val()
-    console.log(searchtext)
-    searchListByKeyword(searchtext)
-  });
+  
 
 }
 

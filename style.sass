@@ -84,6 +84,7 @@ body
 			padding: 1.2em 1em
 			display: inline-block
 			line-height: 0
+			cursor: pointer
 
 //search result
 .search-result
@@ -153,6 +154,22 @@ body
 .comment-container
 	height: 17%	
 	background: white
+
+.comment 
+	padding: 0 1.5em
+	display: flex
+	width: 100%
+	flex-direction: row
+	&-field
+		@extend .search-bar-field
+		height: 0
+	&-btn
+		@extend .search-bar-field-btn
+		padding: 0em 1em
+		margin: 0 0.5em
+		border: none
+		border-radius: 2px
+		background: #4b73ec
 
 .footer
 	background: $navbar-font

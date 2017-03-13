@@ -62,11 +62,11 @@ body {
   .search-bar > input {
     margin: 0 0.5em;
     border: none; }
-  .search-bar-field {
+  .search-bar-field, .comment-field {
     background: #f6f6f6;
     padding: 1em;
     height: 50%; }
-    .search-bar-field-btn {
+    .search-bar-field-btn, .comment-btn {
       background: #df4642;
       color: white;
       font-size: large;
@@ -74,7 +74,8 @@ body {
       width: 30%;
       padding: 1.2em 1em;
       display: inline-block;
-      line-height: 0; }
+      line-height: 0;
+      cursor: pointer; }
 
 .search-result {
   margin-top: 15px;
@@ -140,6 +141,20 @@ body {
 .comment-container {
   height: 17%;
   background: white; }
+
+.comment {
+  padding: 0 1.5em;
+  display: flex;
+  width: 100%;
+  flex-direction: row; }
+  .comment-field {
+    height: 0; }
+  .comment-btn {
+    padding: 0em 1em;
+    margin: 0 0.5em;
+    border: none;
+    border-radius: 2px;
+    background: #4b73ec; }
 
 .footer {
   background: #df4642;
