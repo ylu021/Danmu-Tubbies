@@ -80,19 +80,19 @@ function setSigninStatus(isSignedIn) {
         onSignIn(googleUser)
         makeApiCalls()
       })
-      // alert(window.location.pathname)
-      if(window.location.pathname=="/landing.php"){
-        window.location = '/'
-      }else{
-        console.log('finally')
-      }
+      // // alert(window.location.pathname)
+      // if(window.location.pathname=="/landing.php"){
+      //   window.location = '/'
+      // }else{
+      //   console.log('finally')
+      // }
 
   }else {
       $('#grant-auth').html('Sign in') //change to sign out
       $('#search').css('display', 'none')
       console.log(window.location.pathname)
-      if(window.location.pathname!="/landing.php"){
-        window.location = './landing.php'
+      if(window.location.pathname!="/"){
+        window.location = '/'
       }else{
         console.log('finally')
       }
