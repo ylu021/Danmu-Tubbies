@@ -9,6 +9,7 @@
   if(empty($_GET)){
     header('Location: ' . './404.php');
   }
+  echo 'my info $email, $video_id';
   include 'head.php';
 ?>
 
