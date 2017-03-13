@@ -1,3 +1,47 @@
-body
-	background: black
+*
+	margin: 0
+	padding: 0
 
+html, body
+	font-size: 16px;
+	box-sizing: border-box
+
+body
+	background: white
+
+//navbar
+.container-pushin
+	padding: 1em 1.5em
+
+.header-Navbar
+	max-height: 60px
+	color: #1abc9c
+	display: flex
+	-webkit-display: flex
+	flex-direction: row
+	justify-content: space-between
+	align-items: center
+	
+	&-profile
+		display: inline-block
+		font-weight: 500
+	&-toggle
+		background: transparent
+		color: black
+		border: none
+		font-size: inherit
+	&-logo
+		background: url(http://lycworks.me/img/front5.png)
+		background-size: contain
+		background-repeat: no-repeat
+		&-link
+			display: inline-block
+			color: white
+			font-size: small
+	
+.btn-custom
+	@extend .btn
+	font-weight: 500
+
+.search
+	display: none

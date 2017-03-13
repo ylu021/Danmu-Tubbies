@@ -11,11 +11,14 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="row header-Navbar">
-        <div class="header-Navbar-toggle">
-          <button id="grant-auth" class="btn-custom"></button>
+    <div class="row header-Navbar container-pushin">
+        <div class="header-Navbar-logo">
+          <a href="/" class="header-Navbar-logo-link">
+            <h1>Tubbies for <3</h1>
+          </a>
         </div>
         <div class="header-Navbar-profile">
+          <button id="grant-auth" class="header-Navbar-toggle btn-custom"></button>
           <span id="email"></span>
         </div>
     </div>
