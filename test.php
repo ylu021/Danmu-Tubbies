@@ -106,13 +106,6 @@
                          $(this).stop()
                        })
                      }
-
-            <?php }
-                } catch(PDOException $e) {
-                  print "Error!: " . $e->getMessage() . "<br/>";
-                  die();
-                }
-            ?>
 	        }
 
 	      }
