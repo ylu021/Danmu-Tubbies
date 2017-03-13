@@ -4,8 +4,8 @@
   $query = 'SELECT * from "Tubbies_Comment" WHERE video_id=? ORDER BY comment_time ASC';
   $stmt = $db->prepare($query);
   $stmt->execute(array($_GET['q']));
-  $email = base64_decode($_GET['email'])
-  $video_id = $_GET['q']
+  $email = base64_decode($_GET['email']);
+  $video_id = $_GET['q'];
   include 'head.php';
 ?>
 
