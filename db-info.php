@@ -1,7 +1,9 @@
 <?php
-	$dbhost = "localhost";
-	$dbuser = "mzhang41";
-	$dbpass = "LUOqiesite123";
-	$dbname = "brickhack3";
+	$url = parse_url(getenv("DATABASE_URL"));
+
+	$dbhost = $url["host"];
+	$dbuser = $url["user"];
+	$dbpass = $url["pass"];
+	$dbname = substr$($url["path"], 1);
 
 ?>
