@@ -31,7 +31,7 @@
       <div class="footer">Im a footer</div>
       <?php include 'script.php'; ?>
 
-		<script>
+		<script crossorigin="anonymous">
 		// 2. This code loads the IFrame Player API code asynchronously.
 	      var tag = document.createElement('script');
 
