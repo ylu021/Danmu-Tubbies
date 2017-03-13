@@ -11,7 +11,7 @@
 
 
 		<body>
-			<div id="container">
+			<div class="outer-container">
         <div class="row">
           <div id="youtube_container" class="col-md-8">
   				</div>

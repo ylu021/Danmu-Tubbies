@@ -67,7 +67,7 @@ function setSigninStatus(isSignedIn) {
   //second place to get information
   var isAuth = googleUser.hasGrantedScopes(SCOPE)
   if(isAuth) {
-      $('#search').css('display', 'inline-block')
+      $('.search').css('display', 'block')
       $('#grant-auth').html('Sign out') //change to sign out
       var apiKey = "AIzaSyCNiO6-GtSC_fqHvfGc2MA_UMTwXOLAn34"
       gapi.client.setApiKey(apiKey)
