@@ -5,18 +5,18 @@ $gre-bg: #f6f6f6
 @mixin field 
 	background: $gre-bg
 	padding: 1em
-	height: 50%
+	border: none
 
 @mixin btn 
 	background: $navbar-font
 	color: white
 	font-size: large
 	font-weight: 500
-	width: 30%
 	padding: 1.2em 1em
 	display: inline-block
 	line-height: 0
 	cursor: pointer
+	border: none
 
 *
 	margin: 0
@@ -89,12 +89,14 @@ input
 	-webkit-display: flex
 	> input
 		margin: 0 0.5em
-		border: none
+
 .search-bar-field
 	@include field
+	height: 50%
 
 .search-bar-field-btn
 	@include btn
+	width: 30%
 
 //search result
 .search-result
@@ -171,19 +173,19 @@ input
 	display: flex
 	width: 100%
 	flex-direction: row
+	justify-content: center
 
 .comment-field
 	@include field
-	height: 0
 	width: 50%
 
 .comment-btn
 	@include btn
 	padding: 0em 1em
 	margin: 0 0.5em
-	border: none
 	border-radius: 2px
 	background: #4b73ec
+	width: 10%
 
 .footer
 	background: $navbar-font

@@ -63,12 +63,12 @@ input {
   display: flex;
   -webkit-display: flex; }
   .search-bar > input {
-    margin: 0 0.5em;
-    border: none; }
+    margin: 0 0.5em; }
 
 .search-bar-field {
   background: #f6f6f6;
   padding: 1em;
+  border: none;
   height: 50%; }
 
 .search-bar-field-btn {
@@ -76,11 +76,12 @@ input {
   color: white;
   font-size: large;
   font-weight: 500;
-  width: 30%;
   padding: 1.2em 1em;
   display: inline-block;
   line-height: 0;
-  cursor: pointer; }
+  cursor: pointer;
+  border: none;
+  width: 30%; }
 
 .search-result {
   margin-top: 15px;
@@ -150,13 +151,13 @@ input {
   padding: 0 1.5em;
   display: flex;
   width: 100%;
-  flex-direction: row; }
+  flex-direction: row;
+  justify-content: center; }
 
 .comment-field {
   background: #f6f6f6;
   padding: 1em;
-  height: 50%;
-  height: 0;
+  border: none;
   width: 50%; }
 
 .comment-btn {
@@ -164,16 +165,16 @@ input {
   color: white;
   font-size: large;
   font-weight: 500;
-  width: 30%;
   padding: 1.2em 1em;
   display: inline-block;
   line-height: 0;
   cursor: pointer;
+  border: none;
   padding: 0em 1em;
   margin: 0 0.5em;
-  border: none;
   border-radius: 2px;
-  background: #4b73ec; }
+  background: #4b73ec;
+  width: 10%; }
 
 .footer {
   background: #df4642;
