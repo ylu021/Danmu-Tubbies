@@ -102,9 +102,13 @@ body {
   width: 100%;
   height: auto; }
 
-.item-content-name {
+.item-content-desc {
   width: 75%;
-  font-size: large;
   margin-left: 1em; }
+  .item-content-desc-name {
+    font-size: large;
+    clear: both; }
+  .item-content-desc-description {
+    font-size: small; }
 
 /*# sourceMappingURL=output.css.map */

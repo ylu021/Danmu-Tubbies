@@ -46,17 +46,30 @@ function executeRequest(request) {
           obj['videoId'] = itemId
           obj['title'] = item['snippet']['title']
           obj['thumbnail'] = item['snippet']['thumbnails']['default']['url']
+          object['desc'] = item['snippet']['description']
 
           var singleton = document.createElement('li')
           singleton.className = 'search-result-group-item container-pushin' 
           var innerdiv = document.createElement('div')
           innerdiv.className = 'item-content'
+
+          var descpanel = document.createElement('div')
+          descpanel.className = 'item-content-desc'
+          
           var title = document.createElement('span')
           title.textContent = obj['title']
-          title.className = 'item-content-name'
+          title.className = 'item-content-desc-name'
+
+          var desc = document.createElement('p')
+          desc.textContent = obj['desc']
+          desc.className = 'item-content-desc-description'
+
+          descpanel.appendChild(title)
+          descpanel.appendChild(desc)
           
-          innerdiv.prepend(title)
-          innerdiv.appendChild(createLink(obj))
+          innerdiv.prepend(createLink(obj))
+          innerdiv.appendChild(descpanel)
+
           singleton.appendChild(innerdiv)
           view.appendChild(singleton)
 
