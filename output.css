@@ -35,7 +35,7 @@ body {
     background: url(http://lycworks.me/img/front5.png) no-repeat;
     background-size: contain;
     background-position: 100%;
-    width: 15%; }
+    width: 12%; }
     .header-Navbar-logo-link {
       display: inline-block;
       color: #df4642;
@@ -77,16 +77,18 @@ body {
 .search-result {
   margin-top: 50px;
   background: #f6f6f6;
-  padding: 1em; }
+  padding: 0; }
 
 .search-result-group-item {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   margin: 1.5em 0; }
   .search-result-group-item > * {
     width: 50%; }
   .search-result-group-item > img {
     border: none;
-    border-radius: 3px; }
+    border-radius: 2px;
+    width: 100%;
+    height: auto; }
 
 /*# sourceMappingURL=output.css.map */

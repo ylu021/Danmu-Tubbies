@@ -49,7 +49,7 @@ function executeRequest(request) {
 
           singleton = document.createElement('li')
           singleton.className = 'search-result-group-item' //**change to custom
-          title = document.createElement('h2')
+          title = document.createElement('span')
           title.textContent = obj['title']
           singleton.prepend(title)
           singleton.appendChild(createLink(obj))
@@ -67,7 +67,7 @@ function executeRequest(request) {
 
 function createView() {
   var view = document.createElement('ul')
-  view.className = 'list-group'
+  view.className = 'search-result-group'
   return view
 }
 function createLink(obj) {
