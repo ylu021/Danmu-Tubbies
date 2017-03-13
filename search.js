@@ -48,7 +48,7 @@ function executeRequest(request) {
           obj['thumbnail'] = item['snippet']['thumbnails']['default']['url']
 
           singleton = document.createElement('li')
-          singleton.className = 'list-group-item'
+          singleton.className = 'search-result-group-item' //**change to custom
           title = document.createElement('h2')
           title.textContent = obj['title']
           singleton.prepend(title)
