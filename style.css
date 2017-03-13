@@ -5,16 +5,17 @@
 		html,
 
 		body,
-		#container{
-			height:100%;
-			overflow:hidden;
-			width: 100%;
-		}
+		
 		#youtube_container{
 			height:92%;
 			width:80%;
 		}
-		#container .row {
+		.outer-container{
+			height:100%;
+			overflow:hidden;
+			width: 100%;
+		}
+		.container .row {
 			height: inherit;
 		}
 		#btn{
