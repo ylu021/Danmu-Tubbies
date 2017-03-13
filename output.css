@@ -153,7 +153,7 @@ input {
   flex-direction: row; }
   .comment-field {
     height: 0;
-    width: 70%; }
+    width: 50%; }
   .comment-btn {
     padding: 0em 1em;
     margin: 0 0.5em;
