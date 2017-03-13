@@ -47,11 +47,11 @@
             if (p.length == 1)
                   b[p[0]] = ""
             
-            if(i==1) //email
+            if(i==2) //email
               decoded = atob(p[1])
             else
               decoded = p[1]
-              
+
             b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
           }
           return b;
