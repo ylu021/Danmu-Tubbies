@@ -6,7 +6,9 @@
   $stmt->execute(array($_GET['q']));
   $email = base64_decode($_GET['email']);
   $video_id = urldecode($_GET['q']);
-  
+  if(empty($_GET)){
+    header('Location: ' . './404.php');
+  }
   include 'head.php';
 ?>
 
