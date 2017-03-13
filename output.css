@@ -66,12 +66,12 @@ input {
     margin: 0 0.5em;
     border: none; }
 
-.search-bar-field, .comment-field {
+.search-bar-field {
   background: #f6f6f6;
   padding: 1em;
   height: 50%; }
 
-.search-bar-field-btn, .comment-btn {
+.search-bar-field-btn {
   background: #df4642;
   color: white;
   font-size: large;
@@ -151,15 +151,29 @@ input {
   display: flex;
   width: 100%;
   flex-direction: row; }
-  .comment-field {
-    height: 0;
-    width: 50%; }
-  .comment-btn {
-    padding: 0em 1em;
-    margin: 0 0.5em;
-    border: none;
-    border-radius: 2px;
-    background: #4b73ec; }
+
+.comment-field {
+  background: #f6f6f6;
+  padding: 1em;
+  height: 50%;
+  height: 0;
+  width: 50%; }
+
+.comment-btn {
+  background: #df4642;
+  color: white;
+  font-size: large;
+  font-weight: 500;
+  width: 30%;
+  padding: 1.2em 1em;
+  display: inline-block;
+  line-height: 0;
+  cursor: pointer;
+  padding: 0em 1em;
+  margin: 0 0.5em;
+  border: none;
+  border-radius: 2px;
+  background: #4b73ec; }
 
 .footer {
   background: #df4642;
