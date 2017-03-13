@@ -43,6 +43,8 @@
 	      // 3. This function creates an <iframe> (and YouTube player)
 	      //    after the API code downloads.
 	      var player;
+        var userid= <?php echo $email; ?>
+        var videoid = <?php echo $video_id; ?>
         
 	      function onYouTubeIframeAPIReady() {
           // var videoID =
@@ -51,7 +53,7 @@
 	        player = new YT.Player('youtube_container', {
 	          height: '390',
 	          width: '640',
-	          videoId: qs['q'],
+	          videoId: videoid,
 	          events: {
 	            'onReady': onPlayerReady,
 	            'onStateChange': onPlayerStateChange
@@ -131,8 +133,6 @@
       xttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 
       var timeobj= document.getElementsByTagName("demo").innerHTML
-      var userid= <?php echo $email; ?>
-      var videoid = <?php echo $video_id; ?>
       console.log('myid', userid, videoid)
       $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
         console.log(data)
