@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="row header-Navbar container-pushin">
+    <div class="header-Navbar container-pushin">
         <div class="header-Navbar-logo">
           <a href="/" class="header-Navbar-logo-link">
             <h1>Tubbies for <3</h1>
