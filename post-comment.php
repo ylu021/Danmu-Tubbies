@@ -13,16 +13,18 @@
       echo "i dont have it";
     }else{
       echo "i have it";
-      $query = "INSERT INTO comment(comment_id, comment_text, comment_time, video_id, user_id) VALUES(?,?,?,?,?)";
-      $stmt = $db->prepare($query);
-      $stmt->execute(array(
+      $data = array(
         uniqid(),
         $_POST['text'],
         $_POST['time'],
         $_POST['video_id'],
         urldecode($_POST['user_id'])
-      ));
-
+      );
+      $query = 'INSERT INTO "Tubbies_Comment"(comment_id, comment_text, comment_time, video_id, user_id) VALUES(?,?,?,?,?)';
+      $stmt = $db->prepare($query);
+      if($stmt->execute($data)){
+        echo "success!";
+      }
       print $stmt->errorCode();
 
     }
