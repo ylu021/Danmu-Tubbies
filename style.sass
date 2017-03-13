@@ -95,15 +95,25 @@ body
 	margin: 0 auto
 
 .search-result-group-item
-	display: flex
-	flex-direction: row-reverse
 	list-style: none
 	background: white
 	border: 1px solid $gre-bg
-	> *
-		width: 50%
-	> img
-		border: none
-		border-radius: 2px 
-		width: 100%
-		height: auto
+
+.item-content
+	display: flex
+	flex-wrap: nowrap
+	flex-direction: row-reverse
+	align-items: flex-start
+	width: 100%
+	&-video-link
+		width: 25%
+
+.item-content-video-link img 
+	width: 100%
+	height: auto
+
+.item-content-name
+	width: 75%
+	font-size: large
+	margin-left: 1em
+	
