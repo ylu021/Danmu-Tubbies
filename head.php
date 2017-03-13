@@ -14,7 +14,7 @@
     <div class="header-Navbar container-pushin">
         <div class="header-Navbar-logo">
           <a href="/" class="header-Navbar-logo-link">
-            <h1>Tubbies for <3</h1>
+            <span>Tubbies233</span>
           </a>
         </div>
         <div class="header-Navbar-profile">
