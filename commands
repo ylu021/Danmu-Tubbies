@@ -2,6 +2,6 @@
 
 sass style.sass output.css
 git add .
-git commit -m "fix pdo"
+git commit -m "making css"
 git push heroku master
 heroku ps:scale web=1
