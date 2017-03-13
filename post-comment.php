@@ -4,7 +4,7 @@
   try {
     $db = new PDO($dsn);
     // print "No error!";
-    $query = "SELECT COUNT(*) from comment WHERE user_id=?";
+    $query = 'SELECT COUNT(*) from "Tubbies_Comment" WHERE user_id=?';
     $stmt = $db->prepare($query);
     $stmt->execute(array($_GET['user_id']));
     $rows = $stmt->fetchAll();

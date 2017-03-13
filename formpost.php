@@ -12,9 +12,9 @@
 		echo "How many $count";
 		if($count==0){
 			echo "emptyz";
-			$query = "INSERT INTO user(id, video_id) VALUES(?, ?)";
+			$query = 'INSERT INTO "Tubbies_User"(id) VALUES(?)';
 			$stmt = $db->prepare($query);
-			if($stmt->execute(array(urldecode($_GET['email']), $_GET['q']))) {
+			if($stmt->execute(array(urldecode($_GET['email'])))) {
 				$db = null;
 				$newURL = "./test.php?q=" . $_GET['q'] . "&email=" . urlencode($_GET['email']);
 				// echo $newURL;
