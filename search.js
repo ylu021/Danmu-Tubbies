@@ -99,11 +99,3 @@ function createLink(obj) {
   return link
 }
 
-var jsEncode = {
-  encode: (s,k) => {
-    var enc = ''
-    var str = ''
-    str = s.toString() //only a string can be passed in 
-    for
-  }
-}
