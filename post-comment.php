@@ -2,7 +2,7 @@
   include 'db-info.php';
   //
   try {
-    $db = new PDO($dsn, $opt);
+    $db = new PDO($dsn);
     // print "No error!";
     $query = "SELECT COUNT(*) from comment WHERE user_id=?";
     $stmt = $db->prepare($query);

@@ -3,7 +3,7 @@ include 'database-read.php';
 
 try {
   // print "No error!";
-  $db = new PDO($dsn, $opt);
+  $db = new PDO($dsn);
   $query = "SELECT * from comment WHERE video_id=? ORDER BY comment_time ASC";
   $stmt = $db->prepare($query);
   $stmt->execute(array($_GET['q']));
