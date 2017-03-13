@@ -18,7 +18,7 @@
           </a>
         </div>
         <div class="header-Navbar-profile">
-          <button id="grant-auth" class="header-Navbar-toggle btn-custom"></button>
           <span id="email"></span>
+          <button id="grant-auth" class="header-Navbar-toggle btn-custom"></button>
         </div>
     </div>

@@ -1,3 +1,5 @@
+$navbar-font: #df4642
+
 *
 	margin: 0
 	padding: 0
@@ -15,8 +17,8 @@ body
 
 .header-Navbar
 	max-height: 60px
-	background: #df4642
-	color: #1abc9c
+	background: white
+	color: $navbar-font
 	display: flex
 	-webkit-display: flex
 	flex-direction: row
@@ -28,17 +30,17 @@ body
 		font-weight: 500
 	&-toggle
 		background: transparent
-		color: white
+		color: $navbar-font
 		text-transform: uppercase
 		border: none
 		font-size: inherit
 	&-logo
-		background: url(http://lycworks.me/img/front5.png)
-		background-size: contain
-		background-repeat: no-repeat
+		//background: url(http://lycworks.me/img/front5.png)
+		//background-size: contain
+		//background-repeat: no-repeat
 		&-link
 			display: inline-block
-			color: white
+			color: $navbar-font
 			font-size: small
 	
 .btn-custom
