@@ -1,26 +1,4 @@
-*{
-	margin:0;
-	padding:0;
-}
-html,
-body {
-	width: 100%;
-	height: auto;
-}
 
-#youtube_container{
-	height:92%;
-	width:80%;
-}
-
-.outer-container{
-	height:100%;
-	overflow:hidden;
-	width: 100%;
-}
-.container .row {
-	height: inherit;
-}
 #btn{
 	height:34px;
 	line-height: 34px;
