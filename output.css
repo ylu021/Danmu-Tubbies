@@ -4,7 +4,9 @@
 
 html, body {
   font-size: 16px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%; }
 
 body {
   background: white; }
@@ -118,12 +120,13 @@ body {
 
 .outer-container {
   width: 100%;
-  height: 90vh;
+  height: inherit;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  position: fixed; }
 
 .inner-container {
-  height: 95%;
+  height: 85%;
   position: relative; }
 
 #youtube_container {
