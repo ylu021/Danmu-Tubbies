@@ -151,7 +151,8 @@ input {
   width: 100%;
   flex-direction: row; }
   .comment-field {
-    height: 0; }
+    height: 0;
+    width: 70%; }
   .comment-btn {
     padding: 0em 1em;
     margin: 0 0.5em;
