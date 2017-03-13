@@ -45,9 +45,14 @@ function initClient() {
 }
 
 function handleAuthClick() {
-  if(GoogleAuth.isSignedIn.get())
-    GoogleAuth.signOut()
-    window.location = "./";
+  if(GoogleAuth.isSignedIn.get()){
+    var googleUser = GoogleAuth.currentUser.get()
+
+    GoogleAuth.signOut().then(()=>{
+      console.log('you are out')
+      window.location = "./"
+    })
+  }
   else
     GoogleAuth.signIn()
 }
