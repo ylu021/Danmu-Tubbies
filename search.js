@@ -45,6 +45,7 @@ function executeRequest(request) {
           }
           obj['videoId'] = itemId
           obj['title'] = item['snippet']['title']
+          console.log(item['snippet'])
           obj['thumbnail'] = item['snippet']['thumbnails']['default']['url']
           object['desc'] = item['snippet']['description']
 
