@@ -102,9 +102,16 @@ function onSignIn(googleUser) {
     if(this.responseText == 'invalid') {
       console.log('redirect to display page 404')
     }else{
-      makeApiCalls()
       email = document.getElementById('email')
       email.innerHTML = profile.getEmail()
+      var xhr2 = new XMLHttpRequest()
+      xhr2.open('POST', './formpost.php')
+      xhr2.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+      xhr2.onload = function() {
+        console.log('Confirmed: ' + this.responseText); //after the 
+        makeApiCalls()
+      }
+      xhr2.send('email='+profile.getEmail())
     }
   };
   xhr.send('client_id='+ CLIENT +'&idtoken='+id_token)

@@ -3,7 +3,7 @@
 
 	try {
 		// print "No error!";
-		$db = new PDO($dsn, $opt);
+		$db = new PDO($dsn);
 		$query = "SELECT * from user WHERE id=?";
 		// echo $_GET['email'];
 		$stmt = $db->prepare($query);

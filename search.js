@@ -74,7 +74,7 @@ function createLink(obj) {
   var link = document.createElement('a')
   var email = encodeURIComponent($('#email').text())
   console.log(email)
-  link.href = './formpost.php?q='+encodeURIComponent(obj['videoId'])+'&title='+encodeURIComponent(obj['title'])+'&email='+email
+  link.href = './test.php?q='+encodeURIComponent(obj['videoId'])+'&title='+encodeURIComponent(obj['title'])+'&email='+email
   link.innerHTML = '<img src="'+obj['thumbnail']+'" width="480" height="360"></img>'
   return link
 }
