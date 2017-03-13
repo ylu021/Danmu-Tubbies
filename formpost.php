@@ -4,6 +4,7 @@
 
 	try {
 		$db = new PDO($dsn);
+		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		print "No error!";
 		$data = array(
 				':sid' => urldecode($_POST['email']),
