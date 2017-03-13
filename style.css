@@ -53,7 +53,7 @@ body {
 	animation-play-state: paused;
 }
 
-.inner-footer{
+/*.inner-footer{
 	position: fixed;
 	bottom:0;
 	width: 100%;
@@ -62,7 +62,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
+}*/
 input{
 	height: 30px;
 	border-radius: 6px;
