@@ -23,7 +23,7 @@
 				echo 'successfully inserted';
 				header('Location: ' . '/');
 			}else{
-				echo $err;
+				echo 'failed'+$err;
 			}
 		}else{
 			echo 'already exist';
