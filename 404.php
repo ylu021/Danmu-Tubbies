@@ -6,7 +6,7 @@
       </div>
     </div>
     <div id="searchresult" class="search-result">
-        <p>No videos founded</p>
+        <div class="search-result-error">No videos founded</div>
     </div>
     <?php include 'script.php'; ?>
   </body>

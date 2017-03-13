@@ -32,7 +32,7 @@ body {
     border: none;
     font-size: inherit; }
   .header-Navbar-logo {
-    background: url(http://lycworks.me/img/front5.png) no-repeat;
+    background: url(https://lycworks.me/img/front5.png) no-repeat;
     background-size: contain;
     background-position: 100%;
     width: 12%; }
@@ -78,6 +78,11 @@ body {
   margin-top: 15px;
   background: #f6f6f6;
   width: 100%; }
+  .search-result-error {
+    text-align: center;
+    height: 100vh;
+    font-size: larger;
+    font-weight: 500; }
 
 .search-result-group {
   width: 85%;
