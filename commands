@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ass style.sass output.css
+sass style.sass output.css
 git add .
 git commit -m "fix pdo"
 git push heroku master
