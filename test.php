@@ -4,7 +4,7 @@
   $query = 'SELECT * from "Tubbies_Comment" WHERE video_id=? ORDER BY comment_time ASC';
   $stmt = $db->prepare($query);
   $stmt->execute(array($_GET['q']));
-  $email = base64_decode($_GET['email']);
+  $email = urldecode(base64_decode($_GET['email']));
   $video_id = urldecode($_GET['q']);
   if(empty($_GET)){
     header('Location: ' . './404.php');

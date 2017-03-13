@@ -92,10 +92,11 @@ function createView() {
 function createLink(obj) {
   var link = document.createElement('a')
   link.className = 'item-content-video-link'
-  var email = btoa($('#email').text())
+  var email = encodeURIComponent($('#email').text())
   console.log(email)
-  link.href = './test.php?q='+encodeURIComponent(obj['videoId'])+'&title='+encodeURIComponent(obj['title'])+'&email='+email
+  link.href = './test.php?q='+encodeURIComponent(obj['videoId'])+'&title='+encodeURIComponent(obj['title'])+'&email='+btoa(email)
   link.innerHTML = '<img src="'+obj['thumbnail']+'" width="480" height="360"></img>'
   return link
 }
+
 
