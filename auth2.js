@@ -47,6 +47,7 @@ function initClient() {
 function handleAuthClick() {
   if(GoogleAuth.isSignedIn.get())
     GoogleAuth.signOut()
+    window.location = "./";
   else
     GoogleAuth.signIn()
 }
