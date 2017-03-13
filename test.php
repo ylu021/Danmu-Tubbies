@@ -1,9 +1,7 @@
 <?php
 // include 'database-read.php';
+  require_once 'db-info.php';
 
-try {
-  // print "No error!";
-  $db = new PDO($dsn);
   $query = 'SELECT * from "Tubbies_Comment" WHERE video_id=? ORDER BY comment_time ASC';
   $stmt = $db->prepare($query);
   $stmt->execute(array($_GET['q']));
