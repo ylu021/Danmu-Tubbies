@@ -20,7 +20,8 @@ body {
   -webkit-display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center; }
+  align-items: baseline;
+  border-bottom: 1px solid #f3f3f3; }
   .header-Navbar-profile {
     display: inline-block;
     font-weight: 500; }
@@ -33,7 +34,8 @@ body {
   .header-Navbar-logo-link {
     display: inline-block;
     color: #df4642;
-    font-size: small; }
+    font-size: larger;
+    font-weight: 700; }
 
 .btn-custom {
   font-weight: 500; }
