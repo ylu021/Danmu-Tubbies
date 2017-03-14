@@ -13,6 +13,7 @@
 			<div class="outer-container">
         <div class="inner-container">
           <div id="overlay-comment" class="overlay-comment"></div>
+          <div id="active-comment" class="active-comment"><div id="active-btn" class="active-btn"><button id="active-btn" class="active-btn">Hover</button></div></div>
           <div id="youtube_container">
   				</div>
         </div>
@@ -129,7 +130,7 @@
         var content = $('input').val()
         var $div = $('<div class="title">'+content+'</div>')
         $('#overlay-comment').append($div)
-
+        $('input').val() = ''
         // var max = document.getElementById('player').offsetHeight;
         var rd = Math.random()
           rd = rd * h;
@@ -158,7 +159,6 @@
         console.log(userid, videoid)
         $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
           console.log(data)
-          content.val() = ''
         })
       }
 

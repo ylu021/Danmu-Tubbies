@@ -186,13 +186,18 @@ input {
   position: relative; }
 
 .overlay-comment {
-  background: black;
+  opacity: 0;
   height: 50%;
   font-size: larger;
   font-weight: 400;
   position: absolute;
   width: 100%;
   z-index: 100; }
+
+.overlay-transit {
+  transition: 5s linear;
+  -webkit-transition: 5s linear;
+  opacity: 1; }
 
 .title {
   white-space: nowrap;
@@ -206,5 +211,22 @@ input {
   -webkit-transition: 5s linear;
   top: 0;
   left: 0; }
+
+.active-comment {
+  position: absolute;
+  bottom: 8%; }
+
+.active-btn {
+  background: #df4642;
+  color: white;
+  font-size: large;
+  font-weight: 500;
+  padding: 1.2em 1em;
+  display: inline-block;
+  line-height: 0;
+  cursor: pointer;
+  border: none;
+  background: white;
+  width: 20%; }
 
 /*# sourceMappingURL=output.css.map */

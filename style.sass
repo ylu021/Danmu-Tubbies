@@ -198,13 +198,19 @@ input
 
 //comment area
 .overlay-comment
-	background: black
+	opacity: 0
+	//background: black
 	height: 50%
 	font-size: larger
 	font-weight: 400
 	position: absolute
 	width: 100%
 	z-index: 100
+
+.overlay-transit
+	transition: 5s linear
+	-webkit-transition: 5s linear
+	opacity: 1
 
 .title
 	white-space: nowrap
@@ -218,3 +224,13 @@ input
 	-webkit-transition: 5s linear
 	top: 0
 	left: 0
+
+//comment hover button
+.active-comment
+	position: absolute
+	bottom: 8%
+
+.active-btn
+	@include btn
+	background: white
+	width: 20%
