@@ -70,10 +70,11 @@
           height: '390',
           width: '640',
           videoId: qs['q'],
-          origin: window.location.hostname,
-          fs: 0,
-          showinfo: 0,
-          controls: 0,
+          playerVars: {
+            origin: window.location.hostname,
+            fs: 0,
+            showinfo: 0,
+          },
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
