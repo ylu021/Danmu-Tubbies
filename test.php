@@ -162,7 +162,7 @@
 
       function fire(text, time, playerTime, duration, counter) {
         console.log(text,time, playerTime)
-        console.log('scaled', duration, scaleWindow(playerTime, duration)) 
+        console.log('scaled', duration, scaleWindow(time, duration)) 
         playTime = document.getElementsByTagName("demo").innerHTML
         if (time>=playTime) {
           console.log(time, playTime)
@@ -172,7 +172,7 @@
           var rd = Math.random();
             rd = rd * h;
           $div.css('top',rd).stop().animate({
-            left: -300+counter+'px'
+            left: -300+scaleWindow(time, duration)+'px'
           },10000,'linear',function(){
             $(this).remove();
             counter+=50
