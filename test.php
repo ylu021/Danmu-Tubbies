@@ -100,7 +100,7 @@
                     comment = "<?php echo $row['comment_text']; ?>"
                     time = "<?php echo $row['comment_time']; ?>"
                     console.log(comment, time)
-                    fire(comment, time, player.getCurrentTime(), counter)
+                    fire(comment, time, player.getCurrentTime(), player.getDuration(), counter)
                     counter+=100
 
                     if (player.getPlayerState() == 2){
@@ -151,8 +151,18 @@
         })
       }
 
-      function fire(text, time, playerTime, counter) {
+      var scaleWindow = function(cur_timeframe, maxYT_timeframe) {
+         var maxdx = window.innerWidth
+        //  var mindx = 0
+        //  var minTF = 0
+         var maxTF = maxYT_timeframe
+        //  return maxdx-0)*(cur_timeframe-0)/(maxTF-0)+0
+         return maxdx*cur_timeframe/maxTF
+      }
+
+      function fire(text, time, playerTime, duration, counter) {
         console.log(text,time, playerTime)
+        console.log(scaleWindow(playerTime, duration)) 
         playTime = document.getElementsByTagName("demo").innerHTML
         if (time>=playTime) {
           console.log(time, playTime)
@@ -177,10 +187,18 @@
         x.innerHTML = 'Ok'
       }
 
-      // var comment = function(text) {
-      //   var comment = document.createElement()
-      //   return comment
-      // }
+      var colors = 'e40066-fcec52-94e8b4-50c9ce-b47aea'.split('-')
+      var comments = document.getElementById('overlay-comment')
+      var maxHeight = parseFloat(window.getComputedStyle(comments).height)
+      var initialHeight = 0
+      var time = 1000
+
+      var comment = function(text) {
+        var color = Math.floor((Math.random() * (colors.length-1)) + 0)
+        
+        var comment = document.createElement()
+        return comment
+      }
 
 		</script>
     </body>
