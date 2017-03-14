@@ -22,7 +22,7 @@
 			</div>
 			<div class="comment-container">
         <div class="comment">
-          <a class="nav-result" href="/">Back to search results</a>
+          <a class="nav-result" href="#" onclick="location.href = document.referrer; return false;">>Back to search results</a>
           <input class="comment-field" type="text" id="btntext" placeholder="say something">
           <button class="comment-btn" id="btn" onClick="content()" onmouseover="enter(this)" onmouseleave="leave(this)">ready</button>
         </div>
