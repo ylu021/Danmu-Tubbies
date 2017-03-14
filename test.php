@@ -12,7 +12,7 @@
 		<body>
 			<div class="outer-container">
         <div class="inner-container">
-          <div id="overlay-comment" class="overlay-comment">
+          <div id="overlay-comment" class="overlay-comment"></div>
           <div id="youtube_container">
   				</div>
         </div>
