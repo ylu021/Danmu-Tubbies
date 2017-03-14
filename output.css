@@ -1,185 +1,83 @@
-* {
-  margin: 0;
-  padding: 0; }
+/*
+Error: Invalid CSS after "border:": expected pseudoclass or pseudoelement, was "1px solid $navb..."
+        on line 192 of style.sass
 
-html, body {
-  font-size: 16px;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%; }
+187: 	border-radius: 2px
+188: 	background: #4b73ec
+189: 	width: 10%
+190: 	&:hover
+191: 		background-color: $navbar-font
+192: 		border:1px solid $navbar-font
+193: 
+194: .footer
+195: 	background: $navbar-font
+196: 	height: 60px
+197: 	position: relative
 
-body {
-  background: white; }
-
-input {
-  outline: none; }
-
-.container-pushin {
-  padding: 1em 1.5em; }
-
-.header-Navbar {
-  max-height: 60px;
-  background: white;
-  color: black;
-  display: flex;
-  -webkit-display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
-  border-bottom: 1px solid #f3f3f3; }
-  .header-Navbar-profile {
-    display: inline-block;
-    font-weight: 500; }
-  .header-Navbar-toggle {
-    background: transparent;
-    color: #df4642;
-    text-transform: uppercase;
-    border: none;
-    font-size: inherit; }
-  .header-Navbar-logo {
-    background: url(https://lycworks.me/img/front5.png) no-repeat;
-    background-size: contain;
-    background-position: 100%;
-    width: 12%; }
-    .header-Navbar-logo-link {
-      display: inline-block;
-      color: #df4642;
-      font-size: larger;
-      font-weight: 700; }
-      .header-Navbar-logo-link ::hover, .header-Navbar-logo-link ::active {
-        color: #df4642; }
-
-.btn-custom {
-  font-weight: 500; }
-
-.search {
-  display: none;
-  margin: 0 auto;
-  width: 85%; }
-
-.search-bar {
-  background: white;
-  width: 100%;
-  display: flex;
-  -webkit-display: flex; }
-  .search-bar > input {
-    margin: 0 0.5em; }
-
-.search-bar-field {
-  background: #f6f6f6;
-  padding: 1em;
-  border: none;
-  height: 50%; }
-
-.search-bar-field-btn {
-  background: #df4642;
-  color: white;
-  font-size: large;
-  font-weight: 500;
-  padding: 1.2em 1em;
-  display: inline-block;
-  line-height: 0;
-  cursor: pointer;
-  border: none;
-  width: 30%; }
-
-.search-result {
-  margin-top: 15px;
-  background: #f6f6f6;
-  width: 100%; }
-  .search-result-error {
-    text-align: center;
-    height: 100vh;
-    font-size: larger;
-    font-weight: 500; }
-
-.search-result-group {
-  width: 85%;
-  padding: 1em 1.5em;
-  margin: 0 auto; }
-
-.search-result-group-item {
-  list-style: none;
-  background: white;
-  border: 1px solid #f6f6f6; }
-
-.item-content {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row-reverse;
-  align-items: flex-start;
-  width: 100%; }
-  .item-content-video-link {
-    width: 25%; }
-
-.item-content-video-link img {
-  width: 100%;
-  height: auto; }
-
-.item-content-desc {
-  width: 75%;
-  margin-left: 1em; }
-  .item-content-desc-name {
-    font-size: large;
-    clear: both; }
-  .item-content-desc-description {
-    font-size: small; }
-
-.outer-container {
-  width: 100%;
-  height: inherit;
-  display: flex;
-  flex-direction: column; }
-
-.inner-container {
-  height: 84%;
-  position: relative; }
-
-#youtube_container {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0; }
-
-.comment-container {
-  height: 15%;
-  padding: 0.5em 0;
-  background: white; }
-
-.comment {
-  padding: 0 1.5em;
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: center; }
-
-.comment-field {
-  background: #f6f6f6;
-  padding: 1em;
-  border: none;
-  width: 50%;
-  height: 0; }
-
-.comment-btn {
-  background: #df4642;
-  color: white;
-  font-size: large;
-  font-weight: 500;
-  padding: 1.2em 1em;
-  display: inline-block;
-  line-height: 0;
-  cursor: pointer;
-  border: none;
-  padding: 0em 1em;
-  margin: 0 0.5em;
-  border-radius: 2px;
-  background: #4b73ec;
-  width: 10%; }
-
-.footer {
-  background: #df4642;
-  height: 60px;
-  position: relative; }
-
-/*# sourceMappingURL=output.css.map */
+Backtrace:
+style.sass:192
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1137:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1132:in `tok!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/static_parser.rb:276:in `pseudo'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/static_parser.rb:159:in `simple_selector_sequence'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/static_parser.rb:111:in `selector'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/static_parser.rb:86:in `selector_comma_sequence'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1115:in `expr!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/static_parser.rb:20:in `parse_selector'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:427:in `visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:159:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:391:in `run'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:22:in `load'
+/usr/local/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"border:\": expected pseudoclass or pseudoelement, was \"1px solid $navb...\"\A         on line 192 of style.sass\A \A 187: 	border-radius: 2px\A 188: 	background: #4b73ec\A 189: 	width: 10%\A 190: 	&:hover\A 191: 		background-color: $navbar-font\A 192: 		border:1px solid $navbar-font\A 193: \A 194: .footer\A 195: 	background: $navbar-font\A 196: 	height: 60px\A 197: 	position: relative"; }

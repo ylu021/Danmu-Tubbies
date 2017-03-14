@@ -187,8 +187,28 @@ input
 	border-radius: 2px
 	background: #4b73ec
 	width: 10%
+	&:hover
+		background-color: $navbar-font
+		border:1px solid $navbar-font
 
 .footer
 	background: $navbar-font
 	height: 60px
 	position: relative
+
+//comment area
+.overlay-comment
+	background: black
+	height: 50%
+	font-size: larger
+	font-weight: 400
+	position: absolute
+	width: 100%
+	z-index: 100
+
+.title 
+	white-space: nowrap
+	position: absolute
+	top: 0
+	color: white
+	right: -100px
