@@ -21,6 +21,7 @@
         <div>
 			</div>
 			<div class="comment-container">
+        <a class="nav-result" href="/">Back to search results</a>
         <div class="comment">
           <input class="comment-field" type="text" id="btntext" placeholder="say something">
           <button class="comment-btn" id="btn" onClick="content()" onmouseover="enter(this)" onmouseleave="leave(this)">ready</button>

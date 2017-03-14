@@ -152,13 +152,19 @@ input {
   display: flex;
   width: 100%;
   flex-direction: row;
-  justify-content: center; }
+  justify-content: baseline;
+  flex-wrap: nowrap; }
+
+.nav-result {
+  width: 25%;
+  color: black;
+  font-weight: 500; }
 
 .comment-field {
   background: #f6f6f6;
   padding: 1em;
   border: none;
-  width: 50%;
+  width: 70%;
   height: 0; }
 
 .comment-btn {
@@ -171,8 +177,9 @@ input {
   line-height: 0;
   cursor: pointer;
   border: none;
-  padding: 0em 1em;
+  padding: 0.2em 1em;
   margin: 0 0.5em;
+  line-height: normal;
   border-radius: 2px;
   background: #4b73ec;
   width: 10%; }

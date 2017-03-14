@@ -173,17 +173,24 @@ input
 	display: flex
 	width: 100%
 	flex-direction: row
-	justify-content: center
+	justify-content: baseline
+	flex-wrap: nowrap
+
+.nav-result
+	width: 25%
+	color: black
+	font-weight: 500
 
 .comment-field
 	@include field
-	width: 50%
+	width: 70%
 	height: 0
 
 .comment-btn
 	@include btn
-	padding: 0em 1em
+	padding: 0.2em 1em
 	margin: 0 0.5em
+	line-height: normal
 	border-radius: 2px
 	background: #4b73ec
 	width: 10%
