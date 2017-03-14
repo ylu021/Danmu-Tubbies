@@ -13,7 +13,7 @@
 			<div class="outer-container">
         <div class="inner-container">
           <div id="overlay-comment" class="overlay-comment"></div>
-          <div id="active-comment" class="active-comment"><div id="active-btn" class="active-btn"><button id="active-btn" class="active-btn">Hover</button></div></div>
+          <div id="active-comment" class="active-comment"><div id="active-btn" class="active-btn"><button id="active-btn" class="active-btn">icon</button></div></div>
           <div id="youtube_container">
   				</div>
         </div>
@@ -203,6 +203,12 @@
       var maxHeight = parseFloat(window.getComputedStyle(comments).height)
       var initialHeight = 0
       var time = 1000
+
+      $('#active-btn').mouseenter(function(){
+        console.log('in')
+      }, function(){
+        console.log('out')
+      })
 
       // var comment = function(text) {
       //   var color = Math.floor((Math.random() * (colors.length-1)) + 0)
