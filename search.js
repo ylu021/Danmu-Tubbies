@@ -80,6 +80,7 @@ function executeRequest(request) {
         }
         document.getElementById('searchresult').innerHTML = ''
         document.getElementById('searchresult').appendChild(view)
+        //generate a path to directly go to this page
     }else {
       $('#searchresult').html('<p>No videos founded</p>')
     }

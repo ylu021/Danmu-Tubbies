@@ -22,7 +22,7 @@
 			</div>
 			<div class="comment-container">
         <div class="comment">
-          <a class="nav-result" href="#" onclick="location.href = document.referrer; return false;">>Back to search results</a>
+          <!--<a class="nav-result" href="#" onclick="location.href = document.referrer; return false;">Back to search results</a>-->
           <input class="comment-field" type="text" id="btntext" placeholder="say something">
           <button class="comment-btn" id="btn" onClick="content()" onmouseover="enter(this)" onmouseleave="leave(this)">ready</button>
         </div>
@@ -32,7 +32,7 @@
 
 			</comment>
       <div class="footer container-pushin">
-        <span class="site-info">Tubbies © 2017, A project made by Yichen Lu & Mingjian Zhang</span>
+        <span class="site-info">Danmu|Tubbies © 2017, A project made by Yichen Lu & Mingjian Zhang</span>
       </div>
       <script src="https://www.youtube.com/iframe_api"></script>
       <?php include 'script.php'; ?>

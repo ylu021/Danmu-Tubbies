@@ -207,6 +207,7 @@ a.nav-result {
 .overlay-transit {
   transition: 5s linear;
   -webkit-transition: 5s linear;
+  -moz-transition: 5s linear;
   opacity: 1; }
 
 .title {
@@ -219,6 +220,10 @@ a.nav-result {
 .title-transit {
   transition: 5s linear;
   -webkit-transition: 5s linear;
+  -moz-transition: 5s linear;
+  -moz-animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
   top: 0;
   left: 0; }
 
