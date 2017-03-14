@@ -129,8 +129,7 @@
         var content = $('input').val()
         var $div = $('<div class="title">'+content+'</div>')
         $('#overlay-comment').append($div)
-        
-        document.getElementById('overlay-comment').appendChild($div)
+
         // var max = document.getElementById('player').offsetHeight;
         var rd = Math.random()
           rd = rd * h;
