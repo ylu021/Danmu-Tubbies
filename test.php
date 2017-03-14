@@ -135,7 +135,7 @@
         var rd = Math.random()
           rd = rd * h;
         $div.stop().animate({
-            top: '-100px'
+            top: '0px'
           },10000,'linear',function(){
             $(this).remove();
             counter+=50
@@ -183,7 +183,7 @@
           var rd = Math.random();
             rd = rd * h;
           $div.stop().animate({
-            top: '-100px'
+            top: '0px'
           },10000,'linear',function(){
             $(this).remove();
             counter+=50
