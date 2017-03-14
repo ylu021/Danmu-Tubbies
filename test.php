@@ -126,11 +126,11 @@
 
 
       function content(){
-        var content = document.getElementById('btntext')
-        var $div = createcomment(content.textContent)
-        content.textContent = ''
+        var input = document.getElementById('btntext')
+        var $div = createcomment(input.textContent)
         
         document.getElementById('overlay-comment').appendChild($div)
+        input.textContent = ''
         // var max = document.getElementById('player').offsetHeight;
         var rd = Math.random()
           rd = rd * h;
