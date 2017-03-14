@@ -148,7 +148,22 @@
         console.log(userid, videoid)
         $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
           console.log(data)
-        })
+        });
+
+        // $.post("post-comment.php", {text:content, time:timeobj, user_id: userid, video_id: videoid});
+        // // console.log(obj)
+        // xttp.onreadystatechange = function () {
+        //   if (xttp.readyState == 4 && xttp.status == 200) {
+        //     alert(xttp.responseText)
+        //   }
+        // }
+        //console.log("text="content, timeobj, userid, videoid)
+        // xttp.send(
+        //   "text="+content+
+        //   "&time="+timeobj+
+        //   "&user_id="+userid+
+        //   "&video_id="videoid+" "
+        // )
       }
 
       function fire(text, time, playerTime, counter) {
@@ -170,17 +185,17 @@
         }
       }
 
-      function enter(x) {
+      function meow(){
+        var display = $('input').val();
+          $('input').val('');
+
+      }
+      function enter(x){
         x.innerHTML = 'Fire'
       }
-      function leave(x) {
+      function leave(x){
         x.innerHTML = 'Ok'
       }
-
-      // var comment = function(text) {
-      //   var comment = document.createElement()
-      //   return comment
-      // }
 
 		</script>
     </body>
