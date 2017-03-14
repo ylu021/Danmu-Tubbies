@@ -162,7 +162,7 @@
 
       function fire(text, time, playerTime, duration, counter) {
         console.log(text,time, playerTime)
-        console.log(scaleWindow(playerTime, duration)) 
+        console.log('scaled', duration, scaleWindow(playerTime, duration)) 
         playTime = document.getElementsByTagName("demo").innerHTML
         if (time>=playTime) {
           console.log(time, playTime)
