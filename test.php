@@ -130,7 +130,6 @@
         var $div = createcomment(input.textContent)
         
         document.getElementById('overlay-comment').appendChild($div)
-        input.textContent = ''
         // var max = document.getElementById('player').offsetHeight;
         var rd = Math.random()
           rd = rd * h;
@@ -156,8 +155,9 @@
         var userid= qs['email']
         var videoid = qs['q']
         console.log(userid, videoid)
-        $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
+        $.post("post-comment.php",{text: input.textContent, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
           console.log(data)
+          input.textContent = ''
         })
       }
 
