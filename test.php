@@ -126,9 +126,9 @@
 
 
       function content(){
-        var content = document.getElementById('btntext')
-        var $div = comment(content.textContent)
-        content.textContent = ''
+        var content = $('input').val()
+        var $div = $('<div class="title">'+text+'</div>')
+        $('#overlay-comment').append($div)
         
         document.getElementById('overlay-comment').appendChild($div)
         // var max = document.getElementById('player').offsetHeight;
@@ -159,6 +159,7 @@
         console.log(userid, videoid)
         $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
           console.log(data)
+          content.textContent = ''
         })
       }
 
