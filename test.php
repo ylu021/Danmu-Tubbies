@@ -12,6 +12,7 @@
 		<body>
 			<div class="outer-container">
         <div class="inner-container">
+          <div id="overlay-comment" class="overlay-comment">
           <div id="youtube_container">
   				</div>
         </div>
@@ -111,7 +112,7 @@
 
                     if (player.getPlayerState() == 2){
                       console.log('video is paused')
-                      $('#container').find('#title').each(function(){
+                      $('#overlay-comment').find('#title').each(function(){
                         console.log($(this))
                         $(this).stop()
                       })
@@ -133,7 +134,7 @@
         var content = $('input').val();
         $('input').val('');
         var $div = $('<div class="title">'+content+'</div>')
-        $('#container').append($div)
+        $('#overlay-comment').append($div)
         // var max = document.getElementById('player').offsetHeight;
         var rd = Math.random()
           rd = rd * h;
@@ -179,7 +180,7 @@
           console.log(time, playTime)
 
           var $div = $('<div class="title">'+text+'</div>')
-          $('#container').append($div)
+          $('#overlay-comment').append($div)
           var rd = Math.random();
             rd = rd * h;
           $div.css('top',rd).stop().animate({
