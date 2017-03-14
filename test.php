@@ -145,7 +145,7 @@
             console.log('ended')
             clearInterval(temp)
           }, false)
-        }, 100)) //1 second
+        }, 100) //1 second
 
         //submit form
         var xttp = new XMLHttpRequest()
@@ -177,16 +177,24 @@
         if (time>=playTime) {
           console.log(time, playTime)
 
-          var $div = $('<div class="title">'+text+'</div>')
-          $('#overlay-comment').append($div)
-          var rd = Math.random();
+          var $div = comment(text)
+          document.getElementById('overlay-comment').appendChild($div)
+          var temp = setInterval(function () {
+            $div.classList.add("title-transit")
+            $div.addEventListener('webkitTransitionEnd', function(){
+              console.log('ended')
+              clearInterval(temp)
+            }, false)
+          }, 100) //1 second
+          var rd = Math.random()
             rd = rd * h;
-          $div.css('top',rd).stop().animate({
-            left: -300+scaleWindow(time, duration)+'px'
-          },10000,'linear',function(){
-            $(this).remove();
-            counter+=50
-          })
+          // $div.css('top',rd).stop().animate({
+          //   left: -300+scaleWindow(time, duration)+'px'
+          // },10000,'linear',function(){
+          //   $(this).remove();
+          //   counter+=50
+          // })
+          
         }
       }
 
