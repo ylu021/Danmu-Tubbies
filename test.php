@@ -31,7 +31,9 @@
 				<p id="demo"></p>
 
 			</comment>
-      <div class="footer">Im a footer</div>
+      <div class="footer container-pushin">
+        <span class="site-info">Tubbies © 2017, A project made by Yichen Lu & Mingjian Zhang</span>
+      </div>
       <script src="https://www.youtube.com/iframe_api"></script>
       <?php include 'script.php'; ?>
 

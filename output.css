@@ -190,7 +190,10 @@ a.nav-result {
 .footer {
   background: #df4642;
   height: 60px;
-  position: relative; }
+  position: relative;
+  padding: 1.5em 1em;
+  text-align: center;
+  color: white; }
 
 .overlay-comment {
   opacity: 0;
