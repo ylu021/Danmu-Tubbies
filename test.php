@@ -126,25 +126,27 @@
 
 
       function content(){
-        var input = document.getElementById('btntext')
-        var $div = createcomment(input.textContent)
+        var content = document.getElementById('btntext')
+        var $div = comment(content.textContent)
+        content.textContent = ''
         
         document.getElementById('overlay-comment').appendChild($div)
         // var max = document.getElementById('player').offsetHeight;
         var rd = Math.random()
           rd = rd * h;
-        // $div.css('top',rd).stop().animate({
-        //   left:'-300px'
-        // },10000,'linear',function(){
-        //   $(this).remove()
-        // })
-        var temp = setInterval(function () {
-          $div.classList.add("title-transit")
-          $div.addEventListener('webkitTransitionEnd', function(){
-            console.log('ended')
-            clearInterval(temp)
-          }, false)
-        }, 100) //1 second
+        $div.stop().animate({
+            top: '-100px'
+          },10000,'linear',function(){
+            $(this).remove();
+            counter+=50
+          })
+        // var temp = setInterval(function () {
+        //   $div.classList.add("title-transit")
+        //   $div.addEventListener('webkitTransitionEnd', function(){
+        //     console.log('ended')
+        //     clearInterval(temp)
+        //   }, false)
+        // }, 100)) //1 second
 
         //submit form
         var xttp = new XMLHttpRequest()
@@ -155,9 +157,8 @@
         var userid= qs['email']
         var videoid = qs['q']
         console.log(userid, videoid)
-        $.post("post-comment.php",{text: input.textContent, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
+        $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
           console.log(data)
-          input.textContent = ''
         })
       }
 
@@ -177,24 +178,16 @@
         if (time>=playTime) {
           console.log(time, playTime)
 
-          var $div = createcomment(text)
-          document.getElementById('overlay-comment').appendChild($div)
-          var temp = setInterval(function () {
-            $div.classList.add("title-transit")
-            $div.addEventListener('webkitTransitionEnd', function(){
-              console.log('ended')
-              clearInterval(temp)
-            }, false)
-          }, 100) //1 second
-          var rd = Math.random()
+          var $div = $('<div class="title">'+text+'</div>')
+          $('#overlay-comment').append($div)
+          var rd = Math.random();
             rd = rd * h;
-          // $div.css('top',rd).stop().animate({
-          //   left: -300+scaleWindow(time, duration)+'px'
-          // },10000,'linear',function(){
-          //   $(this).remove();
-          //   counter+=50
-          // })
-          
+          $div.stop().animate({
+            top: '-100px'
+          },10000,'linear',function(){
+            $(this).remove();
+            counter+=50
+          })
         }
       }
 
@@ -211,15 +204,15 @@
       var initialHeight = 0
       var time = 1000
 
-      var createcomment = function(text) {
-        var color = Math.floor((Math.random() * (colors.length-1)) + 0)
-        var newcomment = document.createElement('div')
-        newcomment.style.color = color
-        newcomment.textContent = text
-        newcomment.className = 'title'
-        newcomment.id = 'title'
-        return newcomment
-      }
+      // var comment = function(text) {
+      //   var color = Math.floor((Math.random() * (colors.length-1)) + 0)
+      //   var comment = document.createElement('div')
+      //   comment.style.color = color
+      //   comment.textContent = text
+      //   comment.className = 'title'
+      //   comment.id = 'title'
+      //   return comment
+      // }
 
 		</script>
     </body>
