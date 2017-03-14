@@ -13,7 +13,7 @@
 			<div class="outer-container">
         <div class="inner-container">
           <div id="overlay-comment" class="overlay-comment"></div>
-          <div id="active-comment" class="active-comment"><div id="active-btn" class="active-btn"><button id="active-btn" class="active-btn">icon</button></div></div>
+          <div id="active-comment" class="active-comment"><div id="active-btn" class="active-btn"><button id="active-btn" class="active-btn">Show comments</button></div></div>
           <div id="youtube_container">
   				</div>
         </div>
