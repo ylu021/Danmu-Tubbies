@@ -206,10 +206,10 @@
 
       $('#active-btn').mouseenter(function(){
         console.log('in')
-        $('overlay-comment').css('opacity','1')
+        $('#overlay-comment').css('opacity','1')
       }).mouseleave(function(){
         console.log('out')
-        $('overlay-comment').hide('opacity','0')
+        $('#overlay-comment').css('opacity','0')
       })
 
       // var comment = function(text) {
