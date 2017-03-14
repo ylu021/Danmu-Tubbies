@@ -72,8 +72,7 @@
 	          videoId: qs['q'],
 	          events: {
 	            'onReady': onPlayerReady,
-	            'onStateChange': onPlayerStateChange,
-              'onError': 
+	            'onStateChange': onPlayerStateChange
 	          }
 	        });
 	      }
