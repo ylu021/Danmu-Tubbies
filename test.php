@@ -213,12 +213,12 @@
 
       var createcomment = function(text) {
         var color = Math.floor((Math.random() * (colors.length-1)) + 0)
-        var comment = document.createElement('div')
-        comment.style.color = color
-        comment.textContent = text
-        comment.className = 'title'
-        comment.id = 'title'
-        return comment
+        var newcomment = document.createElement('div')
+        newcomment.style.color = color
+        newcomment.textContent = text
+        newcomment.className = 'title'
+        newcomment.id = 'title'
+        return newcomment
       }
 
 		</script>
