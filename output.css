@@ -152,7 +152,7 @@ input {
   display: flex;
   width: 100%;
   flex-direction: row;
-  justify-content: baseline;
+  align-items: baseline;
   flex-wrap: nowrap; }
 
 a.nav-result {
