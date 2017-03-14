@@ -29,15 +29,16 @@
 
 			</comment>
       <div class="footer">Im a footer</div>
+      <script src="https://www.youtube.com/iframe_api"></script>
       <?php include 'script.php'; ?>
 
-		<script crossorigin="anonymous">
+    <script>
 		// 2. This code loads the IFrame Player API code asynchronously.
-	      var tag = document.createElement('script');
+	      // var tag = document.createElement('script');
 
-	      tag.src = "https://www.youtube.com/iframe_api";
+	      // tag.src = "https://www.youtube.com/iframe_api"
 	      var firstScriptTag = document.getElementsByTagName('script')[0];
-	      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	      // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 	      // 3. This function creates an <iframe> (and YouTube player)
 	      //    after the API code downloads.
@@ -71,7 +72,8 @@
 	          videoId: qs['q'],
 	          events: {
 	            'onReady': onPlayerReady,
-	            'onStateChange': onPlayerStateChange
+	            'onStateChange': onPlayerStateChange,
+              'onError': 
 	          }
 	        });
 	      }
