@@ -130,7 +130,7 @@
         var content = $('input').val()
         var $div = $('<div class="title">'+content+'</div>')
         $('#overlay-comment').append($div)
-        $('input').val() = ''
+        $('input').val('')
         // var max = document.getElementById('player').offsetHeight;
         var rd = Math.random()
           rd = rd * h;
@@ -206,8 +206,10 @@
 
       $('#active-btn').mouseenter(function(){
         console.log('in')
-      }, function(){
+        $('overlay-comment').css('opacity','1')
+      }).mouseleave(function(){
         console.log('out')
+        $('overlay-comment').hide('opacity','0')
       })
 
       // var comment = function(text) {
