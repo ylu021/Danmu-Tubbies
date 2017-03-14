@@ -126,18 +126,26 @@
 
 
       function content(){
-        var content = $('input').val();
-        $('input').val('');
-        var $div = $('<div class="title">'+content+'</div>')
-        $('#overlay-comment').append($div)
+        var content = document.getElementById('btntext')
+        var $div = comment(content.textContent)
+        content.textContent = ''
+        
+        document.getElementById('overlay-comment').appendChild($div)
         // var max = document.getElementById('player').offsetHeight;
         var rd = Math.random()
           rd = rd * h;
-        $div.css('top',rd).stop().animate({
-          left:'-300px'
-        },10000,'linear',function(){
-          $(this).remove()
-        })
+        // $div.css('top',rd).stop().animate({
+        //   left:'-300px'
+        // },10000,'linear',function(){
+        //   $(this).remove()
+        // })
+        var temp = setInterval(function () {
+          $div.classList.add("title-transit")
+          $div.addEventListener('webkitTransitionEnd', function(){
+            console.log('ended')
+            clearInterval(temp)
+          }, false)
+        }, 100)) //1 second
 
         //submit form
         var xttp = new XMLHttpRequest()
@@ -197,8 +205,11 @@
 
       var comment = function(text) {
         var color = Math.floor((Math.random() * (colors.length-1)) + 0)
-        
-        var comment = document.createElement()
+        var comment = document.createElement('div')
+        comment.style.color = color
+        comment.textContent = text
+        comment.className = 'title'
+        comment.id = 'title'
         return comment
       }
 
