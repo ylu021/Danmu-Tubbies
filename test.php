@@ -73,6 +73,7 @@
           origin: window.location.hostname,
           fs: 0,
           showinfo: 0,
+          controls: 0,
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
