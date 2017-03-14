@@ -127,7 +127,7 @@
 
       function content(){
         var content = document.getElementById('btntext')
-        var $div = comment(content.textContent)
+        var $div = createcomment(content.textContent)
         content.textContent = ''
         
         document.getElementById('overlay-comment').appendChild($div)
@@ -177,7 +177,7 @@
         if (time>=playTime) {
           console.log(time, playTime)
 
-          var $div = comment(text)
+          var $div = createcomment(text)
           document.getElementById('overlay-comment').appendChild($div)
           var temp = setInterval(function () {
             $div.classList.add("title-transit")
@@ -211,7 +211,7 @@
       var initialHeight = 0
       var time = 1000
 
-      var comment = function(text) {
+      var createcomment = function(text) {
         var color = Math.floor((Math.random() * (colors.length-1)) + 0)
         var comment = document.createElement('div')
         comment.style.color = color
