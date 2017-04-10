@@ -7,12 +7,12 @@ Error: Inconsistent indentation: 2 spaces were used for indentation, but the res
 35: 	outline: none
 36: 
 37: .info
-38:   background: aliceblue
-39:   width: 100%
-40:   height: 100%
-41:   display: flex
-42:   align-items: center
-43:   justify-content: center
+38:   width: 100%
+39:   height: 100%
+40:   display: flex
+41:   align-items: center
+42:   justify-content: center
+43: 
 
 Backtrace:
 style.sass:38
@@ -34,4 +34,4 @@ style.sass:38
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Inconsistent indentation: 2 spaces were used for indentation, but the rest of the document was indented using 1 tab.\A         on line 38 of style.sass\A \A 33: \A 34: input\A 35: 	outline: none\A 36: \A 37: .info\A 38:   background: aliceblue\A 39:   width: 100%\A 40:   height: 100%\A 41:   display: flex\A 42:   align-items: center\A 43:   justify-content: center"; }
+  content: "Error: Inconsistent indentation: 2 spaces were used for indentation, but the rest of the document was indented using 1 tab.\A         on line 38 of style.sass\A \A 33: \A 34: input\A 35: 	outline: none\A 36: \A 37: .info\A 38:   width: 100%\A 39:   height: 100%\A 40:   display: flex\A 41:   align-items: center\A 42:   justify-content: center\A 43: "; }
