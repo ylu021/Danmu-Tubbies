@@ -3,8 +3,6 @@ var server = require('http').createServer(app)
 var socket = require( 'socket.io' )
 var io = socket.listen( server )
 
-app.set('port', (process.env.PORT || 5000))
-
 io.on('connection', function(client){
   console.log('new client')
   client.on('message', function(data) {
@@ -13,6 +11,6 @@ io.on('connection', function(client){
   })
 })//listen
 
-server.listen(app.get('port'), function(){
+server.listen(8080, function(){
   console.log('listening on ', app.get('port'))
 })
