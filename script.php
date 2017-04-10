@@ -4,3 +4,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()" gapi_processed="true">
 </script>
+<script src="node_modules/socket.io-client/dist/socket.io.js"></script>
+<!-- <script src="http://localhost:8080/socket.io/socket.io.js"></script> -->

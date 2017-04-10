@@ -24,9 +24,9 @@
         <div class="comment">
           <!--<a class="nav-result" href="#" onclick="location.href = document.referrer; return false;">Back to search results</a>-->
           <input class="comment-field" type="text" id="btntext" placeholder="say something">
-          <button class="comment-btn" id="btn" onClick="content()" onmouseover="enter(this)" onmouseleave="leave(this)">ready</button>
+          <button class="comment-btn" id="btn" onmouseover="enter(this)" onmouseleave="leave(this)">ready</button>
         </div>
-				
+
 				<!-- <h4>Get current Time = </h4> -->
 				<p id="demo"></p>
 
@@ -38,6 +38,7 @@
       <?php include 'script.php'; ?>
 
     <script>
+      var socket = io.connect( window.location.host )
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
@@ -57,7 +58,7 @@
           var p=a[i].split('=', 2)
           if (p.length == 1)
                 b[p[0]] = ""
-          
+
           if(i==2) //email
             decoded = atob(p[1])
           else
@@ -129,9 +130,22 @@
       var w = $('html').width() + 200;
 
 
-      function content(){
+      $('#btn').on('click', function(e){
+        console.log('socket?', socket)
+        //submit form
+        var timeobj= document.getElementsByTagName("demo").innerHTML
+        var userid= qs['email']
+        var videoid = qs['q']
         var content = $('input').val()
-        var $div = $('<div class="title">'+content+'</div>')
+        $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
+          console.log('done posting', data)
+          socket.emit('message', {text: content, user_id: userid})
+        })
+      })
+
+      socket.on('incoming', function(data) {
+        //listens for broadcast
+        var $div = $('<div class="title">'+data.text+':'+data.user_id+'</div>')
         $('#overlay-comment').append($div)
         $('input').val('')
         // var max = document.getElementById('player').offsetHeight;
@@ -143,27 +157,7 @@
             $(this).remove();
             counter+=50
           })
-        // var temp = setInterval(function () {
-        //   $div.classList.add("title-transit")
-        //   $div.addEventListener('webkitTransitionEnd', function(){
-        //     console.log('ended')
-        //     clearInterval(temp)
-        //   }, false)
-        // }, 100)) //1 second
-
-        //submit form
-        var xttp = new XMLHttpRequest()
-        xttp.open("POST", 'post-comment.php', true)
-        xttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-
-        var timeobj= document.getElementsByTagName("demo").innerHTML
-        var userid= qs['email']
-        var videoid = qs['q']
-        console.log(userid, videoid)
-        $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
-          console.log(data)
-        })
-      }
+      })
 
       var scaleWindow = function(cur_timeframe, maxYT_timeframe) {
          var maxdx = window.innerWidth
@@ -176,7 +170,7 @@
 
       function fire(text, time, playerTime, duration, counter) {
         console.log(text,time, playerTime)
-        console.log('scaled', duration, scaleWindow(time, duration)) 
+        console.log('scaled', duration, scaleWindow(time, duration))
         playTime = document.getElementsByTagName("demo").innerHTML
         if (time>=playTime) {
           console.log(time, playTime)
