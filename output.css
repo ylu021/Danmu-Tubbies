@@ -24,7 +24,9 @@ input {
 .info-p {
   width: 40%;
   padding: 1em;
-  word-break: break-word; }
+  word-break: break-word;
+  color: #df4642;
+  font-size: larger; }
 
 .info-img {
   max-width: 400px;

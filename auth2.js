@@ -95,7 +95,7 @@ function setSigninStatus(isSignedIn) {
       }else{
         console.log('finally')
       }
-      
+
   }
 }
 
@@ -126,7 +126,7 @@ function onSignIn(googleUser) {
       xhr2.open('POST', './formpost.php')
       xhr2.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
       xhr2.onload = function() {
-        console.log('Confirmed: ' + this.responseText); //after the 
+        console.log('Confirmed: ' + this.responseText); //after the
         makeApiCalls()
       }
       xhr2.send('email='+profile.getEmail()+'&name='+profile.getName())

@@ -1,5 +1,5 @@
 <?php include 'head.php'; ?>
-    <div class="info">
+    <div id="site-info" class="info">
       <p class="info-p">
         Tubbies is an envision of new video watching experience, which borrows the idea of the Japanese website Niconico
       </p>
