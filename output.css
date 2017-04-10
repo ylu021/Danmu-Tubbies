@@ -21,6 +21,15 @@ input {
   align-items: center;
   justify-content: center; }
 
+.info-p {
+  width: 40%;
+  padding: 1em;
+  word-break: break-word; }
+
+.info-img {
+  max-width: 400px;
+  height: auto; }
+
 .container-pushin {
   padding: 1em 1.5em; }
 
