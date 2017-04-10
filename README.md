@@ -5,5 +5,5 @@ This project is still in beta stage, stuck in AWS deployment because of database
 To view a demo, please visit [Devpost] (https://devpost.com/software/danmu-project-instant-commenting-on-youtube) for details. 
 
 ### Updates
-03/14/16
-Currently the project is deployed on Heroku, woohoo! Current progress is to fix the layout and trying out frameworks to make this a single page application. Good progress, me :)
+03/13/16 - Currently the project is deployed on Heroku, woohoo! Current progress is to fix the layout and trying out frameworks to make this a single page application.  
+03/14/16 - Notice the neccessity to use socket, finished basic timing comment float javascript, view [Codepen](http://codepen.io/ylu21/pen/KWqYvg) for details. For socket, will work on it in future times. 
