@@ -1,4 +1,8 @@
+/node_modules
+npm-debug.log
+.DS_Store
 /vendor/
 db-info.php
 .env
 commands
+node_modules
