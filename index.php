@@ -1,4 +1,9 @@
 <?php include 'head.php'; ?>
+    <div class="info">
+      <p>
+        Tubbies is an envision of new video watching experience, which borrows the idea of the Japanese website Nikoniko
+      </p>
+    </div>
     <div class="search container-pushin">
       <div class="search-bar">
         <input type="text" id="searchtext" placeholder="Type Something..." autocomplete="off" class="form-control search-bar-field"/>

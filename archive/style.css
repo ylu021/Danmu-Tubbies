@@ -34,10 +34,10 @@ body {
 	cursor:pointer;
 }*/
 
-#btn:hover{
+/*#btn:hover{
 	background-color: red;
 	border:1px solid red;
-}
+}*/
 
 .title{
 	position:absolute;
@@ -71,6 +71,6 @@ body {
 	border:1px solid #ddd;
 	padding:0 8px
 }*/
-.post-auth {
+/*.post-auth {
 	visibility: hidden;
-}
+}*/
