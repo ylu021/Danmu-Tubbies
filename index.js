@@ -12,5 +12,5 @@ io.on('connection', function(client){
 })//listen
 
 server.listen(8080, function(){
-  console.log('listening on ', app.get('port'))
+  console.log('listening on 8080')
 })
