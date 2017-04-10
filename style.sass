@@ -2,12 +2,12 @@ $navbar-font: #df4642
 $signed-font: black
 $gre-bg: #f6f6f6
 
-@mixin field 
+@mixin field
 	background: $gre-bg
 	padding: 1em
 	border: none
 
-@mixin btn 
+@mixin btn
 	background: $navbar-font
 	color: white
 	font-size: large
@@ -31,8 +31,17 @@ html, body
 body
 	background: white
 
-input	
+input
 	outline: none
+
+.info
+    /* text-align: center; */
+    background: aliceblue
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
 
 //navbar
 .container-pushin
@@ -48,7 +57,7 @@ input
 	justify-content: space-between
 	align-items: baseline
 	border-bottom: 1px solid #f3f3f3
-	
+
 	&-profile
 		display: inline-block
 		font-weight: 500
@@ -71,7 +80,7 @@ input
 			font-weight: 700
 			::hover, ::active
 				color: $navbar-font
-	
+
 .btn-custom
 	//@extend .btn|optional
 	font-weight: 500
@@ -108,7 +117,7 @@ input
 		height: 100vh
 		font-size: larger
 		font-weight: 500
-		
+
 
 .search-result-group
 	width: 85%
@@ -129,7 +138,7 @@ input
 	&-video-link
 		width: 25%
 
-.item-content-video-link img 
+.item-content-video-link img
 	width: 100%
 	height: auto
 
@@ -164,11 +173,11 @@ input
 
 //comment
 .comment-container
-	height: 15%	
+	height: 15%
 	padding: 0.5em 0
 	background: white
 
-.comment 
+.comment
 	padding: 0 1.5em
 	display: flex
 	width: 100%
@@ -257,5 +266,3 @@ a.nav-result
 	text-transform: uppercase
 	::hover
 		opacity: 0.85
-	
-

@@ -1,7 +1,8 @@
 <?php include 'head.php'; ?>
     <div class="info">
       <p>
-        Tubbies is an envision of new video watching experience, which borrows the idea of the Japanese website Nikoniko
+        Tubbies is an envision of new video watching experience, which borrows the idea of the Japanese website Niconico
+        <img src="images/niconico.png" alt="niconico"/>
       </p>
     </div>
     <div class="search container-pushin">
