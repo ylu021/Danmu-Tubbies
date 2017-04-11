@@ -98,8 +98,8 @@
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING) {
           counter = 0
+          var timeobj =  Math.floor(player.getCurrentTime())
           document.getElementById('btn').addEventListener("click", function() {
-            var timeobj =  Math.floor(player.getCurrentTime())
             var userid= decodeURIComponent(atob(qs['email']))
             console.log('email or rubbish', userid)
             var videoid = qs['q']
@@ -144,7 +144,7 @@
 
           console.log('load danmaku', danmaku)
           //within playstatechange, when there is a timestored commenting storing at that time
-          if(danmaku.hasOwnProperty(currentTime))
+          if(danmaku.hasOwnProperty(timeobj))
             fireAll(danmaku)
         }
 
