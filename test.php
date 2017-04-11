@@ -199,7 +199,6 @@
               top: '0px'
             },10000,'linear',function(){
               $(this).remove();
-              counter+=50
             })
 
                 // }, 100)
