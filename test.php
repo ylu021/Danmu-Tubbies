@@ -136,14 +136,21 @@
             var timeobj = Math.floor(player.getCurrentTime())
             var it = null
             if(danmaku.hasOwnProperty(timeobj)) {
-              console.log('this period of time', danmaku[timeobj].entries())
+              console.log('this period of time has', danmaku[timeobj])
               //create iterator and iterate while next
               it = danmaku[timeobj].entries()
+              console.log('i have a iterator ready', it)
             }
 
-            if(it&& !it.next().done) {
+            console.log('do i still have a iterator?', it)
+
+            if(it) {
+              console.log('i have one im here ready to iterate')
+              while(!it.next().done){
                 fireAll(it.next().value)
+              }
             }
+
             // while (visited) {
             //   var it = danmaku[timeobj].entries()
             //   while(!it.next().done) {
