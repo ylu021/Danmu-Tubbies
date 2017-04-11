@@ -154,7 +154,7 @@
 
           //button click
           $('#btn').click(function() {
-            console.log(document.getElementsByTagName("demo").innerHTML)
+            console.log('howmany times', document.getElementsByTagName("demo").innerHTML)
             var timeobj = document.getElementsByTagName("demo").innerHTML
             var userid= decodeURIComponent(atob(qs['email']))
             console.log('time or rubbish', timeobj)
@@ -164,13 +164,12 @@
               console.log('done posting', data)
               socket.emit('message', {text: content, user_id: userid})
             })
-
           })
 
           $('#btntext').keypress(function(e){
             if(e.keyCode==13)
-              $('#btn').click();
-          });
+              $('#btn').click()
+          })
         }
         else{
           //paused
@@ -279,7 +278,7 @@
       //   $('#overlay-comment').css('opacity','1')
       // }).mouseleave(function(){
       //   $('#overlay-comment').css('opacity','0')
-      // })
+      // })s
 
       // var comment = function(text) {
       //   var color = Math.floor((Math.random() * (colors.length-1)) + 0)
