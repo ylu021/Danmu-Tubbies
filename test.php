@@ -126,6 +126,7 @@
 
       function onPlayerStateChange(event) {
         var myTimer = null
+        var it = null
         if (event.data == YT.PlayerState.PLAYING) {
           console.log('checking danmaku when it is playing', danmaku)
           //get currenttime in integer and fire
@@ -134,7 +135,7 @@
             document.getElementsByTagName("demo").innerHTML = Math.floor(player.getCurrentTime())
             // var visited = false
             var timeobj = Math.floor(player.getCurrentTime())
-            var it = null
+
             if(danmaku.hasOwnProperty(timeobj)) {
               console.log('this period of time has', danmaku[timeobj])
               //create iterator and iterate while next
@@ -182,7 +183,7 @@
         else{
           //paused
           console.log('video is paused' )
-
+          it = null
         }
       }
 
