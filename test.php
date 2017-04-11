@@ -168,15 +168,13 @@
             for(var text of danmaku[key]) {
               var $div = $('<div class="title">'+text+'</div>')
               $('#overlay-comment').append($div)
-                (function(text) {
-                  setInterval(function() {
-                    $div.addClass('title-transit')
-                    $div.one(transitionEvent, function(event) {
-                        console.log('end transition')
-                        $div.remove()
-                    })
-                  }, 10)
-                })(text)
+                setInterval(function() {
+                  $div.addClass('title-transit')
+                  $div.one(transitionEvent, function(event) {
+                      console.log('end transition')
+                      $div.remove()
+                  })
+                }, 10)
             }
             // clearInterval(fireevent)
           })
