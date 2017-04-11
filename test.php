@@ -39,7 +39,7 @@
 
     <script>
       console.log('port?', window.location.host)
-      var socket = io.connect( 'https://tubbies.herokuapp.com:8080' )
+      var socket = io.connect( 'https://tubbies.herokuapp.com' )
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
