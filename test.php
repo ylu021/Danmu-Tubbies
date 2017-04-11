@@ -149,7 +149,7 @@
           }, 100)// 100 means repeat in 100 ms
 
           //button click
-          document.getElementById('btn').addEventListener("click", function() {
+          $('#btn').click(function() {
             console.log(document.getElementsByTagName("demo").innerHTML)
             var timeobj = document.getElementsByTagName("demo").innerHTML
             var userid= decodeURIComponent(atob(qs['email']))
