@@ -98,9 +98,20 @@
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING) {
           counter = 0
-          var currentTime =  Math.floor(player.getCurrentTime())
-          document.getElementsByTagName("demo").innerHTML = currentTime
           console.log("current time is "+currentTime)
+          document.getElementById('btn').addEventListener("click", function() {
+            var timeobj =  Math.floor(player.getCurrentTime())
+            var userid= decodeURIComponent(atob(qs['email']))
+            console.log('email or rubbish', userid)
+            var videoid = qs['q']
+            var content = $('input').val()
+            $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
+              console.log('done posting', data)
+              socket.emit('message', {text: content, user_id: userid})
+            })
+
+          })
+
           $('#btntext').keypress(function(e){
             if(e.keyCode==13)
               $('#btn').click();
@@ -161,19 +172,19 @@
       var w = $('html').width() + 200;
 
 
-      $('#btn').on('click', function(e){
-        // console.log('socket?', socket)
-        //submit form
-        var timeobj= document.getElementsByTagName("demo").innerHTML
-        var userid= decodeURIComponent(atob(qs['email']))
-        console.log('email or rubbish', userid)
-        var videoid = qs['q']
-        var content = $('input').val()
-        $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
-          console.log('done posting', data)
-          socket.emit('message', {text: content, user_id: userid})
-        })
-      })
+      // $('#btn').on('click', function(e){
+      //   // console.log('socket?', socket)
+      //   //submit form
+      //   // var timeobj= document.getElementsByTagName("demo").innerHTML
+      //   // var userid= decodeURIComponent(atob(qs['email']))
+      //   // console.log('email or rubbish', userid)
+      //   // var videoid = qs['q']
+      //   // var content = $('input').val()
+      //   // $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
+      //   //   console.log('done posting', data)
+      //   //   socket.emit('message', {text: content, user_id: userid})
+      //   // })
+      // })
 
       socket.on('incoming', function(data) {
         //listens for broadcast
