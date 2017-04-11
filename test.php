@@ -133,14 +133,13 @@
             // var visited = false
             var timeobj = Math.floor(player.getCurrentTime())
             var it = null
-            while(danmaku.hasOwnProperty(timeobj)) {
+            if(danmaku.hasOwnProperty(timeobj)) {
               console.log('this period of time', danmaku[timeobj].entries())
               //create iterator and iterate while next
               it = danmaku[timeobj].entries()
             }
 
-            if(it) {
-              while(!it.next().done)
+            if(it&& !it.next().done) {
                 fireAll(it.next().value)
             }
             // while (visited) {
@@ -152,7 +151,7 @@
             //
             // }
 
-          }, 100)// 100 means repeat in 100 ms
+          }, 1000)// 100 means repeat in 100 ms
 
           //button click
           $('#btn').click(function() {
