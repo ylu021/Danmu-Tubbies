@@ -214,7 +214,7 @@ a.nav-result {
   color: white; }
 
 .overlay-comment {
-  opacity: 0;
+  opacity: 1;
   height: 50%;
   font-size: larger;
   font-weight: 400;

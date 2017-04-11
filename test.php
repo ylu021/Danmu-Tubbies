@@ -130,7 +130,6 @@
           myTimer = setInterval(function(){
             var time;
             document.getElementsByTagName("demo").innerHTML = Math.floor(player.getCurrentTime())
-            console.log('if my time is changing', player.getCurrentTime())
             var timeobj = document.getElementsByTagName("demo").innerHTML
             if(danmaku.hasOwnProperty(timeobj))
               fireAll(danmaku)
