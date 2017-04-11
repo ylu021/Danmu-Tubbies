@@ -98,7 +98,6 @@
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING) {
           counter = 0
-          console.log("current time is "+currentTime)
           document.getElementById('btn').addEventListener("click", function() {
             var timeobj =  Math.floor(player.getCurrentTime())
             var userid= decodeURIComponent(atob(qs['email']))
