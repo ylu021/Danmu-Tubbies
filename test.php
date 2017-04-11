@@ -146,7 +146,7 @@
 
             if(it) {
               console.log('i have one im here ready to iterate')
-              fireAll(it.next())
+              it = fireAll(it.next(), it)
             }
 
             // while (visited) {
@@ -186,10 +186,10 @@
         }
       }
 
-      function fireAll(obj) {
+      function fireAll(obj, it) {
           console.log('firing once', obj)
           if(obj.done) {
-            return
+            return null
           }else {
             var text = obj.value
             var $div = $('<div class="title">'+text+'</div>')
