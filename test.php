@@ -176,7 +176,7 @@
         }
         else{
           //paused
-          console.log('video is paused', )
+          console.log('video is paused' )
 
         }
       }
