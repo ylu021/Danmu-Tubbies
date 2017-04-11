@@ -136,7 +136,7 @@
             // var visited = false
             var timeobj = Math.floor(player.getCurrentTime())
 
-            if(danmaku.hasOwnProperty(timeobj)) {
+            while(danmaku.hasOwnProperty(timeobj)) {
               console.log('this period of time has', danmaku[timeobj])
               //create iterator and iterate while next
               it = danmaku[timeobj].entries()
