@@ -142,7 +142,7 @@
               console.log('i have a iterator ready', it)
             }
 
-            console.log('do i still have a iterator?', it)
+            // console.log('do i still have a iterator?', it)
 
             if(it) {
               console.log('i have one im here ready to iterate')
