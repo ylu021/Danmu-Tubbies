@@ -101,7 +101,7 @@
           var timeobj =  Math.floor(player.getCurrentTime())
           document.getElementById('btn').addEventListener("click", function() {
             var userid= decodeURIComponent(atob(qs['email']))
-            console.log('email or rubbish', userid)
+            console.log('time or rubbish', timeobj)
             var videoid = qs['q']
             var content = $('input').val()
             $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
