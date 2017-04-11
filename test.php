@@ -162,7 +162,7 @@
       }
 
       function fireAll(danmaku) {
-          console.log('firing', danmaku)
+          // console.log('firing', danmaku)
           // var fireevent = null
           Object.keys(danmaku).forEach(function(key) {
             for(var text of danmaku[key]) {
@@ -170,11 +170,10 @@
               $('#overlay-comment').append($div)
                 (function(text) {
                   setInterval(function() {
-                    $div.stop().animate({
-                      top: '0px'
-                    },10000,'linear',function(){
-                      $(this).remove();
-                      // counter+=50
+                    $div.addClass('title-transit')
+                    $div.one(transitionEvent, function(event) {
+                        console.log('end transition')
+                        $div.remove()
                     })
                   }, 10)
                 })(text)
