@@ -174,8 +174,9 @@
                 $div.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(event) {
                     console.log('end transition')
                     $div.remove()
+                    clearInterval(fireevent)
                 })
-              }, 10)
+              }, 100)
           }
           clearInterval(fireevent)
       }
