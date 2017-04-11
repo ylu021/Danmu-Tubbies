@@ -99,11 +99,12 @@
         if (event.data == YT.PlayerState.PLAYING) {
           counter = 0
           var currentTime =  Math.floor(player.getCurrentTime())
+          document.getElementsByTagName("demo").innerHTML = currentTime
+          console.log("current time is "+currentTime)
           $('#btntext').keypress(function(e){
             if(e.keyCode==13)
               $('#btn').click();
           });
-          document.getElementsByTagName("demo").innerHTML = currentTime
           <?php
                 while($row = $stmt->fetch( PDO::FETCH_ASSOC )){
           ?>
@@ -165,6 +166,7 @@
         //submit form
         var timeobj= document.getElementsByTagName("demo").innerHTML
         var userid= qs['email']
+        console.log('email or rubbish', userid)
         var videoid = qs['q']
         var content = $('input').val()
         $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
