@@ -169,13 +169,15 @@
               fireevent = setInterval(function(){
                 var $div = $('<div class="title">'+text+'</div>')
                 $('#overlay-comment').append($div)
+
                 $div.stop().animate({
                     top: '0px'
-                  },10000, 'linear', function(){
-                    $(this).remove()
+                  },10000,'linear',function(){
+                    $(this).remove();
                     // counter+=50
                   })
                 })
+
               }, 100)//1sec
             }
             clearInterval(fireevent)
@@ -208,7 +210,6 @@
         var $div = $('<div class="title">'+data.text+':'+data.user_id+'</div>')
         $('#overlay-comment').append($div)
         $('input').val('')
-
         $div.stop().animate({
             top: '0px'
           },10000,'linear',function(){
