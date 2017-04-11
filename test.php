@@ -99,6 +99,8 @@
         if (event.data == YT.PlayerState.PLAYING) {
           counter = 0
           var timeobj =  Math.floor(player.getCurrentTime())
+          document.getElementsByTagName("demo").innerHTML = player.getCurrentTime();
+          console.log('if my time is changing', player.getCurrentTime())
           document.getElementById('btn').addEventListener("click", function() {
             var userid= decodeURIComponent(atob(qs['email']))
             console.log('time or rubbish', timeobj)
