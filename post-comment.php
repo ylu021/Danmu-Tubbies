@@ -20,7 +20,7 @@
         $_POST['video_id'],
         urldecode($_POST['user_id'])
       );
-      echo 'hi'.$data;
+      echo 'hi'.print_r($data);
       $query = 'INSERT INTO "Tubbies_Comment"(comment_id, comment_text, comment_time, video_id, user_id) VALUES(?,?,?,?,?)';
       $stmt = $db->prepare($query);
       if($stmt->execute($data)){
