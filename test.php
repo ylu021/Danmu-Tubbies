@@ -97,27 +97,7 @@
 
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING) {
-          counter = 0
-          var timeobj =  Math.floor(player.getCurrentTime())
-          document.getElementsByTagName("demo").innerHTML = player.getCurrentTime();
-          console.log('if my time is changing', player.getCurrentTime())
-          document.getElementById('btn').addEventListener("click", function() {
-            console.log(document.getElementsByTagName("demo").innerHTML)
-            var userid= decodeURIComponent(atob(qs['email']))
-            console.log('time or rubbish', timeobj)
-            var videoid = qs['q']
-            var content = $('input').val()
-            $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
-              console.log('done posting', data)
-              socket.emit('message', {text: content, user_id: userid})
-            })
-
-          })
-
-          $('#btntext').keypress(function(e){
-            if(e.keyCode==13)
-              $('#btn').click();
-          });
+          //retrieve from database
           <?php
                 while($row = $stmt->fetch( PDO::FETCH_ASSOC )){
           ?>
@@ -144,13 +124,41 @@
 
           <?php }
           ?>
+          console.log('danmaku is', danmaku)
+          //get currenttime in integer and fire
+          myTimer = setInterval(function(){
+            var time;
+            document.getElementsByTagName("demo").innerHTML = Math.floor(player.getCurrentTime())
+            console.log('if my time is changing', player.getCurrentTime())
+            var timeobj = document.getElementsByTagName("demo").innerHTML
+            if(danmaku.hasOwnProperty(timeobj))
+              fireAll(danmaku)
+          }, 100); // 100 means repeat in 100 ms
 
-          console.log('load danmaku', danmaku)
-          //within playstatechange, when there is a timestored commenting storing at that time
-          if(danmaku.hasOwnProperty(timeobj))
-            fireAll(danmaku)
+          //button click
+          document.getElementById('btn').addEventListener("click", function() {
+            console.log(document.getElementsByTagName("demo").innerHTML)
+            var timeobj = document.getElementsByTagName("demo").innerHTML
+            var userid= decodeURIComponent(atob(qs['email']))
+            console.log('time or rubbish', timeobj)
+            var videoid = qs['q']
+            var content = $('input').val()
+            $.post("post-comment.php",{text:content, time: timeobj, user_id: userid, video_id: videoid}, function(data) {
+              console.log('done posting', data)
+              socket.emit('message', {text: content, user_id: userid})
+            })
+
+          })
+
+          $('#btntext').keypress(function(e){
+            if(e.keyCode==13)
+              $('#btn').click();
+          });
         }
-
+        else{
+          //paused
+          clearInterval(myTimer)
+        }
       }
 
       function fireAll(danmaku) {
