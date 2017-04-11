@@ -184,7 +184,7 @@
           //paused
           console.log('video is paused' )
           it = null
-          danmaku = {}
+          clearInterval(myTimer)
         }
       }
 
