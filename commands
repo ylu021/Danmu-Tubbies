@@ -2,7 +2,7 @@
 
 sass style.sass output.css
 git add .
-git commit -m "working locally, next step connect apache with nodejs"
+git commit -m "working with comment display"
 git push heroku master
 git push
 heroku ps:scale web=1

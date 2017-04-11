@@ -40,6 +40,7 @@
     <script>
       // console.log('port?', window.location.host)
       var socket = io.connect('https://cryptic-citadel-20273.herokuapp.com')
+      var danmaku = {}
       // var socket = io()
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
@@ -97,6 +98,7 @@
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING) {
           counter = 0
+          var currentTime =  Math.floor(player.getCurrentTime())
           $('#btntext').keypress(function(e){
             if(e.keyCode==13)
               $('#btn').click();
@@ -105,26 +107,51 @@
           <?php
                 while($row = $stmt->fetch( PDO::FETCH_ASSOC )){
           ?>
+                var comment = "<?php echo $row['comment_text']; ?>"
+                var time = "<?php echo $row['comment_time']; ?>"
+                if(danmaku.hasOwnProperty(time)){
+                  danmaku[time].push(comment)
+                }else {
+                  danmaku[time] = [comment]
+                }
 
-                    comment = "<?php echo $row['comment_text']; ?>"
-                    time = "<?php echo $row['comment_time']; ?>"
-                    console.log(comment, time)
-                    fire(comment, time, Math.floor(player.getCurrentTime()), Math.floor(player.getDuration ()), counter)
-                    counter+=100
-
-                    if (player.getPlayerState() == 2){
-                      console.log('video is paused')
-                      $('#overlay-comment').find('#title').each(function(){
-                        console.log($(this))
-                        $(this).stop()
-                      })
-                    }
+                // fire(danmaku)
+                    // danmaku
+                    // fire(comment, time, Math.floor(player.getCurrentTime()), Math.floor(player.getDuration ()), counter)
+                    // counter+=100
+                    //
+                    // if (player.getPlayerState() == 2){
+                    //   console.log('video is paused')
+                    //   $('#overlay-comment').find('#title').each(function(){
+                    //     console.log($(this))
+                    //     $(this).stop()
+                    //   })
+                    // }
 
           <?php }
           ?>
+
+          //within playstatechange, when there is a timestored commenting storing at that time
+          if(danmaku.hasOwnProperty(currentTime))
+            fireAll(danmaku)
         }
 
       }
+
+      function fireAll(danmaku) {
+          console.log('firing', danmaku)
+          var fireevent = null
+          Object.keys(danmaku).forEach(function(key) {
+            for(var text of danmaku[key]) {
+              fireevent = setInterval(function(){
+                var $div = $('<div class="title">'+text+'</div>')
+                $('#overlay-comment').append($div)
+              }, 100)//1sec
+            }
+            clearInterval(fireevent)
+          })
+      }
+
       function stopVideo() {
         player.stopVideo()
       }
