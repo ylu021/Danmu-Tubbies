@@ -132,8 +132,8 @@
             document.getElementsByTagName("demo").innerHTML = Math.floor(player.getCurrentTime())
             var timeobj = document.getElementsByTagName("demo").innerHTML
             if(danmaku.hasOwnProperty(timeobj))
-              fireAll(danmaku)
-          }, 100); // 100 means repeat in 100 ms
+              fireAll(danmaku, timeobj)
+          }, 100)// 100 means repeat in 100 ms
 
           //button click
           document.getElementById('btn').addEventListener("click", function() {
@@ -161,23 +161,21 @@
         }
       }
 
-      function fireAll(danmaku) {
+      function fireAll(danmaku, time) {
           // console.log('firing', danmaku)
-          // var fireevent = null
-          Object.keys(danmaku).forEach(function(key) {
-            for(var text of danmaku[key]) {
-              var $div = $('<div class="title">'+text+'</div>')
-              $('#overlay-comment').append($div)
-                setInterval(function() {
-                  $div.addClass('title-transit')
-                  $div.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(event) {
-                      console.log('end transition')
-                      $div.remove()
-                  })
-                }, 10)
-            }
-            // clearInterval(fireevent)
-          })
+          var fireevent = null
+          for(var text of danmaku[time]) {
+            var $div = $('<div class="title">'+text+'</div>')
+            $('#overlay-comment').append($div)
+              fireevent = setInterval(function() {
+                $div.addClass('title-transit')
+                $div.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(event) {
+                    console.log('end transition')
+                    $div.remove()
+                })
+              }, 10)
+          }
+          clearInterval(fireevent)
       }
 
       function stopVideo() {
