@@ -192,19 +192,16 @@
             return
           }else {
             var text = obj.value
-            // var fireevent = null
-            // for(var i=0; i<danmaku[time].length; i++) {
-            //   var text = danmaku[time][i]
-            //   console.log('howmany', text)
             var $div = $('<div class="title">'+text+'</div>')
             $('#overlay-comment').append($div)
           //     fireevent = setInterval(function() {
-            $div.addClass('title-transit')
-            $div.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(event) {
-                // console.log('end transition')
-                $div.remove()
-                // clearInterval(fireevent)
+            $div.stop().animate({
+              top: '0px'
+            },10000,'linear',function(){
+              $(this).remove();
+              counter+=50
             })
+
                 // }, 100)
             // }
             // clearInterval(fireevent)
