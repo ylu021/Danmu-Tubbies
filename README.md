@@ -7,5 +7,4 @@ To view a demo, please visit [Devpost] (https://devpost.com/software/danmu-proje
 ### Updates
 03/13/16 - Currently the project is deployed on Heroku, woohoo! Current progress is to fix the layout and trying out frameworks to make this a single page application.  
 03/14/16 - Notice the neccessity to use socket, finished basic timing comment float javascript, view [Codepen](http://codepen.io/ylu21/pen/KWqYvg) for details. For socket, will work on it in future times. 
-
-04/11/16 - Implemented socket.io for broadcasting comments, served as a separate nodejs service [here](https://github.com/ylu021/tubbies-socket)
+04/11/16 - Implemented socket.io for broadcasting comments, served as a separate nodejs service [here](https://github.com/ylu021/tubbies-socket). Next milestone is to find a proper way to distribute comments among video timeframe.
