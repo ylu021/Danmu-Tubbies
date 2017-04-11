@@ -126,7 +126,7 @@
           ?>
           console.log('danmaku is', danmaku)
           //get currenttime in integer and fire
-          myTimer = setInterval(function(){
+          var myTimer = setInterval(function(){
             var time;
             document.getElementsByTagName("demo").innerHTML = Math.floor(player.getCurrentTime())
             console.log('if my time is changing', player.getCurrentTime())
