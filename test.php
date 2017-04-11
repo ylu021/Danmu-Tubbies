@@ -130,23 +130,27 @@
           myTimer = setInterval(function(){
             var time;
             document.getElementsByTagName("demo").innerHTML = Math.floor(player.getCurrentTime())
-            var timeobj = document.getElementsByTagName("demo").innerHTML
-            var visited = false
-            if(danmaku.hasOwnProperty(timeobj)){
-              //create iterator and iterate while next
-              visited = true
-            }
+            // var visited = false
 
-            while (visited) {
-              var it = danmaku[timeobj].entries()
-              while(!it.next().done) {
-                fireAll(it.next().value)
-              }
-              visited = false
-
-            }
+            // while (visited) {
+            //   var it = danmaku[timeobj].entries()
+            //   while(!it.next().done) {
+            //     fireAll(it.next().value)
+            //   }
+            //   visited = false
+            //
+            // }
 
           }, 100)// 100 means repeat in 100 ms
+
+          var timeobj = document.getElementsByTagName("demo").innerHTML
+          if(danmaku.hasOwnProperty(timeobj)){
+            //create iterator and iterate while next
+            var it = danmaku[timeobj].entries()
+            while(!it.next().done) {
+              fireAll(it.next().value)
+            }
+          }
 
           //button click
           $('#btn').click(function() {
@@ -223,8 +227,7 @@
         $div.stop().animate({
             top: '0px'
           },10000,'linear',function(){
-            $(this).remove();
-            // counter+=50
+            $(this).remove()
           })
         })
       socket.on('error', function(){ console.log('err')})
