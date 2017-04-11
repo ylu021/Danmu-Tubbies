@@ -165,7 +165,7 @@
         // console.log('socket?', socket)
         //submit form
         var timeobj= document.getElementsByTagName("demo").innerHTML
-        var userid= qs['email']
+        var userid= decodeURIComponent(atob(qs['email']))
         console.log('email or rubbish', userid)
         var videoid = qs['q']
         var content = $('input').val()
