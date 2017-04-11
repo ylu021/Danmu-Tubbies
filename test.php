@@ -38,7 +38,7 @@
       <?php include 'script.php'; ?>
 
     <script>
-      console.log('port?', window.location.host)
+      // console.log('port?', window.location.host)
       var socket = io.connect('https://cryptic-citadel-20273.herokuapp.com')
       // var socket = io()
       // 2. This code loads the IFrame Player API code asynchronously.
@@ -101,7 +101,7 @@
             if(e.keyCode==13)
               $('#btn').click();
           });
-          document.getElementsByTagName("demo").innerHTML = player.getCurrentTime();
+          document.getElementsByTagName("demo").innerHTML = Math.floor(player.getCurrentTime());
           <?php
                 while($row = $stmt->fetch( PDO::FETCH_ASSOC )){
           ?>
@@ -109,7 +109,7 @@
                     comment = "<?php echo $row['comment_text']; ?>"
                     time = "<?php echo $row['comment_time']; ?>"
                     console.log(comment, time)
-                    fire(comment, time, player.getCurrentTime(), player.getDuration(), counter)
+                    fire(comment, time, Math.floor(player.getCurrentTime()), Math.floor(player.getDuration ()), counter)
                     counter+=100
 
                     if (player.getPlayerState() == 2){
@@ -133,7 +133,7 @@
 
 
       $('#btn').on('click', function(e){
-        console.log('socket?', socket)
+        // console.log('socket?', socket)
         //submit form
         var timeobj= document.getElementsByTagName("demo").innerHTML
         var userid= qs['email']
