@@ -103,7 +103,7 @@
             if(e.keyCode==13)
               $('#btn').click();
           });
-          document.getElementsByTagName("demo").innerHTML = Math.floor(player.getCurrentTime());
+          document.getElementsByTagName("demo").innerHTML = currentTime
           <?php
                 while($row = $stmt->fetch( PDO::FETCH_ASSOC )){
           ?>
