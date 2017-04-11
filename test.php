@@ -171,8 +171,8 @@
                 $('#overlay-comment').append($div)
                 $div.stop().animate({
                     top: '0px'
-                  },10000,'linear',function(){
-                    $(this).remove();
+                  },10000, 'linear', function(){
+                    $(this).remove()
                     // counter+=50
                   })
                 })
