@@ -166,10 +166,15 @@
           var fireevent = null
           Object.keys(danmaku).forEach(function(key) {
             for(var text of danmaku[key]) {
-              fireevent = setInterval(function(){
-                var $div = $('<div class="title">'+text+'</div>')
-                $('#overlay-comment').append($div)
-              }, 100)//1sec
+              var $div = $('<div class="title">'+text+'</div>')
+              $('#overlay-comment').append($div)
+              $div.stop().animate({
+                  top: '0px'
+                },10000,'linear',function(){
+                  $(this).remove();
+                  // counter+=50
+                })
+              })
             }
             clearInterval(fireevent)
           })
