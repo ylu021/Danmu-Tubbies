@@ -4,10 +4,7 @@ var KEY = "AIzaSyCNiO6-GtSC_fqHvfGc2MA_UMTwXOLAn34"
 var CLIENT = "1061679501444-mhapvggl4osvb5bm6q3lf2856hi5q6b7.apps.googleusercontent.com"
 
 function handleClientLoad() {
-  console.log('i still got them ',KEY,CLIENT)
   //this is called directly after page loaded
-  //set visibility of button
-  // console.log('am i here')
   gapi.load('client:auth2', initClient)
 }
 
@@ -15,31 +12,30 @@ function initClient() {
   var discoveryUrl = 'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'
   //use for method calls
   //initiate an instance for auth
-    gapi.client.init({
-      apiKey: KEY,
-      client_id: CLIENT,
-      scope: SCOPE,
-      discoveryDocs: [discoveryUrl]
-    }).then(function() {
-      //after instance created, save it to the global var
-      GoogleAuth = gapi.auth2.getAuthInstance()
-      console.log(GoogleAuth)
-      // //listen for sign in state
-      GoogleAuth.isSignedIn.listen(updateSigninStatus)
+  gapi.client.init({
+    apiKey: KEY,
+    client_id: CLIENT,
+    scope: SCOPE,
+    discoveryDocs: [discoveryUrl]
+  }).then(function() {
+    //after instance created, save it to the global var
+    GoogleAuth = gapi.auth2.getAuthInstance()
+    console.log(GoogleAuth)
+    // //listen for sign in state
+    GoogleAuth.isSignedIn.listen(updateSigninStatus)
 
-      // var user = GoogleAuth.currentUser.get()
-      //maybe where I want to get the information
-      setSigninStatus()
+    // var user = GoogleAuth.currentUser.get()
+    //maybe where I want to get the information
+    setSigninStatus()
 
-      //set visibility of button
-      $('#grant-auth').click(function() {
-        console.log('clicked')
-        handleAuthClick()
-      })
-      $('#revoke-auth').click(function() {
-        revokeAccess()
-      })
+    //set visibility of button
+    $('#grant-auth').click(function() {
+      handleAuthClick()
     })
+    $('#revoke-auth').click(function() {
+      revokeAccess()
+    })
+  })
 
 
 }
@@ -49,7 +45,6 @@ function handleAuthClick() {
     var googleUser = GoogleAuth.currentUser.get()
 
     GoogleAuth.signOut().then(()=>{
-      console.log('you are out')
       window.location = "./"
     })
   }
@@ -92,8 +87,6 @@ function setSigninStatus(isSignedIn) {
       console.log(window.location.pathname)
       if(window.location.pathname!="/"){
         window.location = '/'
-      }else{
-        console.log('finally')
       }
 
   }
@@ -111,7 +104,6 @@ function onSignIn(googleUser) {
 
   // The ID token you need to pass to your backend:
   var id_token = googleUser.getAuthResponse().id_token;
-  console.log("ID Token: " + id_token)
   var xhr = new XMLHttpRequest()
   xhr.open('POST', './signin.php')
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
@@ -126,7 +118,6 @@ function onSignIn(googleUser) {
       xhr2.open('POST', './formpost.php')
       xhr2.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
       xhr2.onload = function() {
-        console.log('Confirmed: ' + this.responseText); //after the
         makeApiCalls()
       }
       xhr2.send('email='+profile.getEmail()+'&name='+profile.getName())
