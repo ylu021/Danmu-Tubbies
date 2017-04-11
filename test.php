@@ -131,7 +131,18 @@
             var time;
             document.getElementsByTagName("demo").innerHTML = Math.floor(player.getCurrentTime())
             // var visited = false
+            var timeobj = Math.floor(player.getCurrentTime())
+            var it = null
+            while(danmaku.hasOwnProperty(timeobj)) {
+              console.log('this period of time', danmaku[timeobj].entries())
+              //create iterator and iterate while next
+              it = danmaku[timeobj].entries()
+            }
 
+            if(it) {
+              while(!it.next().done)
+                fireAll(it.next().value)
+            }
             // while (visited) {
             //   var it = danmaku[timeobj].entries()
             //   while(!it.next().done) {
@@ -142,15 +153,6 @@
             // }
 
           }, 100)// 100 means repeat in 100 ms
-
-          var timeobj = document.getElementsByTagName("demo").innerHTML
-          if(danmaku.hasOwnProperty(timeobj)){
-            //create iterator and iterate while next
-            var it = danmaku[timeobj].entries()
-            while(!it.next().done) {
-              fireAll(it.next().value)
-            }
-          }
 
           //button click
           $('#btn').click(function() {
