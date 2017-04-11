@@ -102,6 +102,7 @@
           document.getElementsByTagName("demo").innerHTML = player.getCurrentTime();
           console.log('if my time is changing', player.getCurrentTime())
           document.getElementById('btn').addEventListener("click", function() {
+            console.log(document.getElementsByTagName("demo").innerHTML)
             var userid= decodeURIComponent(atob(qs['email']))
             console.log('time or rubbish', timeobj)
             var videoid = qs['q']
