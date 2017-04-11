@@ -39,7 +39,7 @@
 
     <script>
       console.log('port?', window.location.host)
-      var socket = io.connect( 'https://tubbies.herokuapp.com/' )
+      var socket = io()
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
@@ -159,6 +159,7 @@
             counter+=50
           })
       })
+      socket.on('error', function(){ console.log('err')})
 
       var scaleWindow = function(cur_timeframe, maxYT_timeframe) {
          var maxdx = window.innerWidth
