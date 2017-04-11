@@ -131,8 +131,21 @@
             var time;
             document.getElementsByTagName("demo").innerHTML = Math.floor(player.getCurrentTime())
             var timeobj = document.getElementsByTagName("demo").innerHTML
-            if(danmaku.hasOwnProperty(timeobj))
-              fireAll(danmaku, timeobj)
+            var visited = false
+            if(danmaku.hasOwnProperty(timeobj)){
+              //create iterator and iterate while next
+              visited = true
+            }
+
+            while (visited) {
+              var it = danmaku[timeobj].entries()
+              while(!it.next().done) {
+                fireAll(it.next().value)
+              }
+              visited = false
+
+            }
+
           }, 100)// 100 means repeat in 100 ms
 
           //button click
@@ -161,24 +174,24 @@
         }
       }
 
-      function fireAll(danmaku, time) {
-          // console.log('firing', danmaku)
-          var fireevent = null
-          for(var i=0; i<danmaku[time].length; i++) {
-            var text = danmaku[time][i]
-            console.log('howmany', text)
-            var $div = $('<div class="title">'+text+'</div>')
-            $('#overlay-comment').append($div)
-              fireevent = setInterval(function() {
-                $div.addClass('title-transit')
-                $div.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(event) {
-                    console.log('end transition')
-                    $div.remove()
-                    clearInterval(fireevent)
-                })
-              }, 100)
-          }
-          clearInterval(fireevent)
+      function fireAll(text) {
+          console.log('firing once', text)
+          // var fireevent = null
+          // for(var i=0; i<danmaku[time].length; i++) {
+          //   var text = danmaku[time][i]
+          //   console.log('howmany', text)
+          var $div = $('<div class="title">'+text+'</div>')
+          $('#overlay-comment').append($div)
+        //     fireevent = setInterval(function() {
+          $div.addClass('title-transit')
+          $div.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(event) {
+              // console.log('end transition')
+              $div.remove()
+              // clearInterval(fireevent)
+          })
+              // }, 100)
+          // }
+          // clearInterval(fireevent)
       }
 
       function stopVideo() {
