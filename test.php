@@ -96,6 +96,7 @@
       }
 
       function onPlayerStateChange(event) {
+        var myTimer = null
         if (event.data == YT.PlayerState.PLAYING) {
           //retrieve from database
           <?php
@@ -126,7 +127,7 @@
           ?>
           console.log('danmaku is', danmaku)
           //get currenttime in integer and fire
-          var myTimer = setInterval(function(){
+          myTimer = setInterval(function(){
             var time;
             document.getElementsByTagName("demo").innerHTML = Math.floor(player.getCurrentTime())
             console.log('if my time is changing', player.getCurrentTime())
