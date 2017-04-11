@@ -221,6 +221,7 @@
 
       socket.on('incoming', function(data) {
         //listens for broadcast
+        console.log('if this wont work go back to localhost', data)
         var $div = $('<div class="title">'+data.text+':'+data.user_id+'</div>')
         $('#overlay-comment').append($div)
         $('input').val('')
