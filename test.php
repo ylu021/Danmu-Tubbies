@@ -170,7 +170,7 @@
               $('#overlay-comment').append($div)
                 setInterval(function() {
                   $div.addClass('title-transit')
-                  $div.one(transitionEvent, function(event) {
+                  $div.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(event) {
                       console.log('end transition')
                       $div.remove()
                   })
