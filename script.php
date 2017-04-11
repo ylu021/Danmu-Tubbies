@@ -5,4 +5,4 @@
 <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()" gapi_processed="true">
 </script>
 <!-- <script src="node_modules/socket.io-client/dist/socket.io.js"></script> -->
-<script src="./socket.io/socket.io.js"></script>
+<script src="https://tubbies.herokuapp.com/socket.io/socket.io.js"></script>
