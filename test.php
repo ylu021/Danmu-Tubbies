@@ -169,6 +169,13 @@
               fireevent = setInterval(function(){
                 var $div = $('<div class="title">'+text+'</div>')
                 $('#overlay-comment').append($div)
+                $div.stop().animate({
+                    top: '0px'
+                  },10000,'linear',function(){
+                    $(this).remove();
+                    // counter+=50
+                  })
+                })
               }, 100)//1sec
             }
             clearInterval(fireevent)
@@ -201,16 +208,14 @@
         var $div = $('<div class="title">'+data.text+':'+data.user_id+'</div>')
         $('#overlay-comment').append($div)
         $('input').val('')
-        // var max = document.getElementById('player').offsetHeight;
-        var rd = Math.random()
-          rd = rd * h;
+
         $div.stop().animate({
             top: '0px'
           },10000,'linear',function(){
             $(this).remove();
-            counter+=50
+            // counter+=50
           })
-      })
+        })
       socket.on('error', function(){ console.log('err')})
 
       var scaleWindow = function(cur_timeframe, maxYT_timeframe) {
@@ -255,11 +260,11 @@
       var initialHeight = 0
       var time = 1000
 
-      $('#active-btn').mouseenter(function(){
-        $('#overlay-comment').css('opacity','1')
-      }).mouseleave(function(){
-        $('#overlay-comment').css('opacity','0')
-      })
+      // $('#active-btn').mouseenter(function(){
+      //   $('#overlay-comment').css('opacity','1')
+      // }).mouseleave(function(){
+      //   $('#overlay-comment').css('opacity','0')
+      // })
 
       // var comment = function(text) {
       //   var color = Math.floor((Math.random() * (colors.length-1)) + 0)
