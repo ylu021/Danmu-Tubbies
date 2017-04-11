@@ -131,6 +131,7 @@
           <?php }
           ?>
 
+          console.log('load danmaku', danmaku)
           //within playstatechange, when there is a timestored commenting storing at that time
           if(danmaku.hasOwnProperty(currentTime))
             fireAll(danmaku)
@@ -232,10 +233,8 @@
       var time = 1000
 
       $('#active-btn').mouseenter(function(){
-        console.log('in')
         $('#overlay-comment').css('opacity','1')
       }).mouseleave(function(){
-        console.log('out')
         $('#overlay-comment').css('opacity','0')
       })
 
