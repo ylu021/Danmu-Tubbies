@@ -169,15 +169,6 @@
               fireevent = setInterval(function(){
                 var $div = $('<div class="title">'+text+'</div>')
                 $('#overlay-comment').append($div)
-
-                $div.stop().animate({
-                    top: '0px'
-                  },10000,'linear',function(){
-                    $(this).remove();
-                    // counter+=50
-                  })
-                })
-
               }, 100)//1sec
             }
             clearInterval(fireevent)
