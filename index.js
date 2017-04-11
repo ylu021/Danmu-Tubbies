@@ -1,7 +1,7 @@
 var app = require('express')()
 // var server = require('http').createServer(app)
 var socket = require( 'socket.io' )
-var io = socket.listen( 8080 )
+var io = socket.listen( 80 )
 // var port = process.env.PORT || 3000
 io.on('connection', function(client){
   console.log('new client')
