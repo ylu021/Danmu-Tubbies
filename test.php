@@ -127,20 +127,23 @@
       function onPlayerStateChange(event) {
         var myTimer = null
         var it = null
+        var counter = 0
         if (event.data == YT.PlayerState.PLAYING) {
           console.log('checking danmaku when it is playing', danmaku)
           //get currenttime in integer and fire
           myTimer = setInterval(function(){
             var time;
+            console.log('count', counter)
             document.getElementsByTagName("demo").innerHTML = Math.floor(player.getCurrentTime())
             // var visited = false
             var timeobj = Math.floor(player.getCurrentTime())
 
-            while(danmaku.hasOwnProperty(timeobj)) {
+            if(danmaku.hasOwnProperty(timeobj)) {
               console.log('this period of time has', danmaku[timeobj])
               //create iterator and iterate while next
               it = danmaku[timeobj].entries()
               console.log('i have a iterator ready', it)
+              counter+=1
             }
 
             // console.log('do i still have a iterator?', it)
